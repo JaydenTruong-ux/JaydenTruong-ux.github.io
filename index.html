@@ -125,6 +125,14 @@ nav a:hover{
   box-shadow:0 10px 20px rgba(0,0,0,0.12);
   transition:.3s;
   font-family:'Press Start 2P', cursive;
+  opacity:0;
+  transform:translateY(40px);
+  transition:opacity 0.8s ease, transform 0.8s ease;
+}
+
+.experience-card.visible{
+  opacity:1;
+  transform:translateY(0);
 }
 
 .experience-card:hover{
@@ -201,6 +209,14 @@ nav a:hover{
   border:2px solid var(--dustyLilac);
   max-width:950px;
   box-shadow:0 10px 25px rgba(0,0,0,0.12);
+  opacity:0;
+  transform:translateY(40px);
+  transition:opacity 0.8s ease, transform 0.8s ease;
+}
+
+.about-me.visible{
+  opacity:1;
+  transform:translateY(0);
 }
 
 .about-me h2{
@@ -239,7 +255,6 @@ nav a:hover{
   animation:floatStar linear infinite, twinkle ease-in-out infinite;
 }
 
-/* Make each star look like a pixel cross */
 .star::before, .star::after{
   content:'';
   position:absolute;
@@ -270,6 +285,43 @@ nav a:hover{
 @keyframes twinkle{
   0%,100%{opacity:0.2;transform:scale(0.8);}
   50%{opacity:1;transform:scale(1.3);}
+}
+
+/* MASTERY SECTION */
+.mastery{
+  margin-top:80px;
+  background: linear-gradient(
+    145deg,
+    var(--cardLight),
+    var(--softLilac)
+  );
+  padding:35px 50px;
+  border-radius:16px;
+  border:2px solid var(--dustyLilac);
+  max-width:800px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.12);
+  font-family:'Press Start 2P', cursive;
+  text-align:center;
+  opacity:0;
+  transform:translateY(40px);
+  transition:opacity 0.8s ease, transform 0.8s ease;
+}
+
+.mastery.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.mastery h2{
+  font-size:22px;
+  margin-bottom:20px;
+  color:var(--textDark);
+}
+
+.mastery p{
+  font-size:14px;
+  color:var(--textDark);
+  line-height:1.8;
 }
 </style>
 </head>
@@ -345,6 +397,11 @@ nav a:hover{
 <p>Hello! I am Jayden, a Legal Studies student with a minor in Human Resource Management from the University of Waterloo. I am currently in my third year of my undergraduate degree and through my internships and coursework, I have gained hands-on experience in business development, marketing, and project coordination. Alongside a strong foundation in legal research, critical thinking, and policy analysis, my interest in law has helped me see how law connects to business and society. I look forward to applying what I learn to practical settings where I can collaborate, problem solve, and contribute to meaningful projects. Let's connect!</p>
 </div>
 
+<div class="mastery">
+<h2>MASTERY</h2>
+<p>GitHub, Digital Marketing, Jira, Partner Marketing, Shopify, HubSpot</p>
+</div>
+
 <script>
 const name="Jayden Truong";
 const text=document.getElementById("text");
@@ -389,6 +446,29 @@ for(let i=0;i<numberOfStars;i++){
 
   starsContainer.appendChild(star);
 }
+
+// Scroll-triggered animations
+const scrollElements=document.querySelectorAll('.experience-card, .about-me, .mastery');
+
+const elementInView=(el, offset=0)=>{
+  const elementTop=el.getBoundingClientRect().top;
+  return elementTop <= (window.innerHeight || document.documentElement.clientHeight) - offset;
+};
+
+const displayScrollElement=(el)=>{
+  el.classList.add('visible');
+};
+
+const handleScrollAnimation=()=>{
+  scrollElements.forEach(el=>{
+    if(elementInView(el, 100)){
+      displayScrollElement(el);
+    }
+  });
+};
+
+window.addEventListener('scroll', handleScrollAnimation);
+window.addEventListener('load', handleScrollAnimation);
 </script>
 
 </body>
