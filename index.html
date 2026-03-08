@@ -53,7 +53,7 @@ nav ul li a:hover::after {
 
 /* --- Name Typing Animation --- */
 #name{
-  font-size: 60px; 
+  font-size: 70px; 
   color:#4f5f52;
   text-align:center;
   line-height:1.8;
@@ -70,15 +70,23 @@ nav ul li a:hover::after {
   100%{border-color:transparent}
 }
 
-/* --- Incoming Status --- */
-#incoming {
+/* --- HUD Boxes --- */
+.hud-box {
   font-family:'Press Start 2P', cursive;
-  font-size: 16px; 
-  font-weight: normal;
-  color: #4f5f52;
-  margin-top: 20px;
-  margin-bottom: 60px;
-  text-align:center;
+  background:#F2E4E7;
+  border: 4px solid #4f5f52;
+  border-radius: 12px;
+  padding: 20px 30px;
+  margin: 30px 0;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 8px 8px 0px #4f5f52;
+}
+.hud-box p {
+  font-family:'Comfortaa', cursive;
+  font-size: 16px;
+  margin: 10px 0 0 0;
+  line-height: 1.8;
 }
 
 /* --- Section Title --- */
@@ -148,28 +156,6 @@ nav ul li a:hover::after {
   font-size: 12px;
   line-height: 1.5;
 }
-
-/* --- About Me Box --- */
-.about-box {
-  font-family: 'Comfortaa', cursive;
-  max-width: 850px;
-  padding: 35px;
-  border: 3px solid #4f5f52;
-  background: #F2E4E7;
-  border-radius: 12px;
-  margin-bottom: 60px;
-}
-.about-box h2 {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 20px;
-  text-align:center;
-  margin-bottom: 25px;
-}
-.about-box p {
-  line-height:1.8;
-  color:#4f5f52;
-  font-size:16px;
-}
 </style>
 </head>
 <body>
@@ -187,7 +173,12 @@ nav ul li a:hover::after {
 <h1 id="name">
   <span id="text"></span><span class="cursor"></span>
 </h1>
-<div id="incoming">Incoming @ Sephora...</div>
+
+<!-- Incoming HUD Box -->
+<div class="hud-box">
+  <span style="font-family:'Press Start 2P', cursive; font-size:14px;">STATUS: INCOMING</span>
+  <p>Incoming @ Sephora...</p>
+</div>
 
 <!-- Career Quests Section -->
 <h2 class="section-title">CAREER QUESTS</h2>
@@ -244,8 +235,8 @@ nav ul li a:hover::after {
 
 </div>
 
-<!-- About Me Box -->
-<div class="about-box">
+<!-- About Me HUD Box -->
+<div class="hud-box">
   <h2>ABOUT ME</h2>
   <p>Hello! I am Jayden, a Legal Studies student with a minor in Human Resource Management from the University of Waterloo. I am currently in my third year of my undergraduate degree and through my internships and coursework, I have gained hands-on experience in business development, marketing, and project coordination. Alongside a strong foundation in legal research, critical thinking, and policy analysis, my interest in law has helped me see how law connects to business and society. I look forward to applying what I learn to practical settings where I can collaborate, problem solve, and contribute to meaningful projects. Let's connect!</p>
 </div>
