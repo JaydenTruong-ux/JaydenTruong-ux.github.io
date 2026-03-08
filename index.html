@@ -5,19 +5,19 @@
 <title>Jayden Truong</title>
 
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 /* --- Body & Theme --- */
-body{
+body {
   margin:0;
-  font-family:'Press Start 2P', cursive;
+  font-family:'Comfortaa', cursive;
   background: linear-gradient(135deg,#F2E4E7,#B7C9B6);
   display:flex;
   flex-direction: column;
   align-items: center;
   min-height:100vh;
-  padding-bottom: 50px;
 }
 
 /* --- Navigation Bar --- */
@@ -25,9 +25,7 @@ nav {
   background: #B7C9B6;
   width:100%;
   padding: 20px 0;
-  margin-bottom: 40px;
 }
-
 nav ul {
   display: flex;
   justify-content: center;
@@ -36,116 +34,120 @@ nav ul {
   margin: 0;
   padding: 0;
 }
-
 nav ul li a {
   text-decoration: none;
   color: #4f5f52;
   transition: color 0.2s;
   position: relative;
 }
-
 nav ul li a:hover {
   color: #F2E4E7;
 }
-
-/* Add symbol on hover for Resume link */
-nav ul li a.resume-link:hover::after {
-  content: " 🔗";
-  position: relative;
+nav ul li a:hover::after {
+  content: " ↗";
+  font-size: 12px;
 }
 
 /* --- Name Typing Animation --- */
 #name{
-  font-size: 50px;
+  font-size: 40px;
   color:#4f5f52;
   text-align:center;
-  line-height:1.8;
-  margin-top: 80px;
-  margin-bottom: 10px;
+  line-height:1.6;
+  margin-top: 50px;
 }
-
-#incoming {
-  font-style: normal;
-  color:#4f5f52;
-  margin-bottom: 40px;
-  font-family: 'Press Start 2P', cursive; /* Changed font */
-  font-size: 18px;
-}
-
 .cursor{
   border-right:4px solid #4f5f52;
   animation:blink 1s infinite;
 }
-
 @keyframes blink{
   0%{border-color:transparent}
   50%{border-color:#4f5f52}
   100%{border-color:transparent}
 }
 
-/* --- Experience Cards --- */
+/* --- Incoming Status --- */
+#incoming {
+  font-family:'Press Start 2P', cursive;
+  font-size: 12px;
+  font-weight: normal;
+  color: #4f5f52;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  text-align:center;
+}
+
+/* --- Section Title --- */
+.section-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 22px;
+  color: #4f5f52;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* --- Experience / Quest Cards --- */
 .experiences {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 50px;
-  margin-top: 50px;
-  padding-bottom: 60px;
+  gap: 30px;
+  margin-bottom: 50px;
 }
-
 .experience-card {
-  width: 250px;
-  padding: 30px;
-  border-radius: 10px;
+  width: 260px;
+  padding: 25px;
+  border-radius: 12px;
   background: #F2E4E7;
   text-align: center;
   cursor: pointer;
-  box-shadow: 0px 6px 12px rgba(0,0,0,0.1);
-  transition: transform 0.2s, background 0.2s;
+  border: 3px solid #4f5f52;
+  box-shadow: 6px 6px 0px #4f5f52;
+  transition: transform 0.2s;
 }
-
 .experience-card:hover {
-  transform: translateY(-5px);
-  background: #B7C9B6;
+  transform: translateY(-6px);
 }
-
 .experience-card img {
   width: 100px;
   height: 100px;
   object-fit: contain;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
-
 .experience-card h3 {
-  margin: 10px 0;
+  margin: 10px 0 5px 0;
+  font-family:'Press Start 2P', cursive;
   color:#4f5f52;
 }
+.quest-label {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  color: #4f5f52;
+  margin-bottom: 10px;
+  display:block;
+}
 
-/* --- About Me Section --- */
-.about-me-card {
+/* --- About Me Box --- */
+.about-box {
+  font-family: 'Comfortaa', cursive;
   max-width: 800px;
+  padding: 25px;
+  border: 2px solid #4f5f52;
   background: #F2E4E7;
-  border-radius: 10px;
-  padding: 40px;
-  margin: 60px auto 80px auto;
-  text-align: left;
-  font-family: 'Comfortaa', cursive;
-  box-shadow: 0px 6px 12px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  margin-bottom: 50px;
 }
-
-.about-me-card h2 {
-  color: #4f5f52;
-  margin-bottom: 30px;
-  text-align: center;
-  font-family: 'Press Start 2P', cursive; /* Header in Press Start 2P */
-  font-size: 28px;
-}
-
-.about-me-card p {
-  color: #4f5f52;
-  line-height: 2;
+.about-box h2 {
+  font-family: 'Press Start 2P', cursive;
   font-size: 18px;
-  font-family: 'Comfortaa', cursive;
+  text-align:center;
+  margin-bottom: 15px;
+}
+.about-box p {
+  line-height:1.6;
+  color:#4f5f52;
+  font-size:14px;
 }
 </style>
 </head>
@@ -155,7 +157,7 @@ nav ul li a.resume-link:hover::after {
 <nav>
   <ul>
     <li><a href="index.html">Home</a></li>
-    <li><a href="JaydenTruong_Resume.pdf" target="_blank" class="resume-link">Resume</a></li>
+    <li><a href="resume.pdf" target="_blank">Resume</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
@@ -164,36 +166,50 @@ nav ul li a.resume-link:hover::after {
 <h1 id="name">
   <span id="text"></span><span class="cursor"></span>
 </h1>
-<p id="incoming">Incoming @ Sephora...</p>
+<div id="incoming">Incoming @ Sephora...</div>
 
-<audio id="typeSound" src="typing.mp3" preload="auto"></audio>
-
-<!-- Experience Cards -->
+<!-- Career Quests Section -->
+<h2 class="section-title">CAREER QUESTS</h2>
 <div class="experiences">
+
+  <!-- Sephora -->
   <div class="experience-card" onclick="location.href='experience3.html'">
-    <img src="sephora-logo.png" alt="Sephora Logo" />
+    <span class="quest-label">QUEST</span>
+    <img src="sephora-logo.png" alt="Sephora Logo">
     <h3>Sephora</h3>
+    <span class="quest-label">STATUS: INCOMING</span>
   </div>
+
+  <!-- Digital Extremes -->
   <div class="experience-card" onclick="location.href='experience1.html'">
-    <img src="digitalextremes-logo.png" alt="Digital Extremes Logo" />
+    <span class="quest-label">QUEST</span>
+    <img src="digitalextremes-logo.png" alt="Digital Extremes Logo">
     <h3>Digital Extremes</h3>
+    <span class="quest-label">STATUS: COMPLETED</span>
   </div>
+
+  <!-- Henson Shaving -->
   <div class="experience-card" onclick="location.href='experience2.html'">
-    <img src="hensonshaving-logo.png" alt="Henson Shaving Logo" />
+    <span class="quest-label">QUEST</span>
+    <img src="hensonshaving-logo.png" alt="Henson Shaving Logo">
     <h3>Henson Shaving</h3>
+    <span class="quest-label">STATUS: COMPLETED</span>
   </div>
+
 </div>
 
-<!-- About Me Section -->
-<div class="about-me-card">
-  <h2>About Me</h2>
+<!-- About Me Box -->
+<div class="about-box">
+  <h2>ABOUT ME</h2>
   <p>Hello! I am Jayden, a Legal Studies student with a minor in Human Resource Management from the University of Waterloo. I am currently in my third year of my undergraduate degree and through my internships and coursework, I have gained hands-on experience in business development, marketing, and project coordination. Alongside a strong foundation in legal research, critical thinking, and policy analysis, my interest in law has helped me see how law connects to business and society. I look forward to applying what I learn to practical settings where I can collaborate, problem solve, and contribute to meaningful projects. Let's connect!</p>
 </div>
 
+<!-- Typing Animation Script -->
+<audio id="typeSound" src="typing.mp3" preload="auto"></audio>
 <script>
-/* --- Typing Animation --- */
 const name = "Jayden Truong";
 const text = document.getElementById("text");
+const sound = document.getElementById("typeSound");
 let i = 0;
 const typingSpeed = 120;
 
