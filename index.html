@@ -2,275 +2,276 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Jayden Truong</title>
+<title>Player Stats - Jayden Truong</title>
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 /* --- Body & Theme --- */
-body{
-  margin:0;
-  font-family:'Comfortaa', cursive;
-  background: linear-gradient(135deg,#F2E4E7,#B7C9B6);
-  display:flex;
+body {
+  margin: 0;
+  font-family: 'Comfortaa', cursive;
+  background: linear-gradient(135deg, #F2E4E7, #B7C9B6);
+  display: flex;
   flex-direction: column;
   align-items: center;
-  min-height:100vh;
-  padding-bottom:70px;
+  min-height: 100vh;
+  padding-bottom: 50px;
 }
 
 /* --- Navigation Bar --- */
 nav {
   background: #B7C9B6;
-  width:100%;
-  padding: 25px 0;
-  display:flex;
-  justify-content:center;
-  gap:50px;
+  width: 100%;
+  padding: 20px 0;
 }
 
-nav a {
-  font-family:'Press Start 2P', cursive;
-  text-decoration:none;
-  color:#4f5f52;
-  border:2px solid #4f5f52;
-  padding:10px 16px;
-  border-radius:6px;
-  transition: all 0.2s;
-  position: relative;
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-nav a:hover {
-  background:#4f5f52;
-  color:#F2E4E7;
+nav ul li a {
+  text-decoration: none;
+  color: #4f5f52;
+  transition: color 0.2s;
+  font-family: 'Press Start 2P', cursive;
 }
 
-nav a::after {
-  content:"↗"; 
-  display:none;
-  margin-left:5px;
+nav ul li a:hover::after {
+  content: " ↗";
 }
 
-nav a:hover::after {
-  display:inline;
+/* --- Page Header --- */
+h1 {
+  font-family: 'Press Start 2P', cursive;
+  color: #4f5f52;
+  font-size: 36px;
+  margin: 40px 0 20px 0;
+  text-align: center;
+  letter-spacing: 2px;
 }
 
-/* --- Name Typing Animation --- */
-#name{
-  font-family:'Press Start 2P', cursive;
-  font-size:90px;
-  color:#4f5f52;
-  text-align:center;
-  line-height:1.6;
-  margin-top:70px;
-}
-
-.cursor{
-  border-right:6px solid #4f5f52;
-  animation:blink 1s infinite;
-}
-
-@keyframes blink{
-  0%{border-color:transparent}
-  50%{border-color:#4f5f52}
-  100%{border-color:transparent}
-}
-
-/* --- Incoming Role --- */
-#incoming {
-  font-family:'Press Start 2P', cursive;
-  font-size:22px;
-  font-style:normal;
-  color:#4f5f52;
-  margin-top:20px;
-}
-
-/* --- Experience Cards --- */
-.experiences {
+/* --- Level / Quest Cards --- */
+.quests {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 50px;
-  margin-top: 80px;
-  width:100%;
-  max-width:1200px;
+  gap: 30px;
+  width: 90%;
+  max-width: 1200px;
 }
 
-.experience-card {
-  width:300px;
-  padding:25px;
-  border-radius:10px;
-  background:#F2E4E7;
-  text-align:center;
-  cursor:pointer;
-  box-shadow:0px 6px 12px rgba(0,0,0,0.15);
+.quest-card {
+  width: 300px;
+  background: #F2E4E7;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   transition: transform 0.2s, background 0.2s;
-  font-family:'Press Start 2P', cursive;
 }
 
-.experience-card:hover {
-  transform:translateY(-7px);
-  background:#B7C9B6;
+.quest-card:hover {
+  transform: translateY(-5px);
+  background: #B7C9B6;
 }
 
-.experience-card img {
-  width:120px;
-  height:120px;
-  object-fit:contain;
-  margin-bottom:20px;
+.quest-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 15px;
 }
 
-.experience-card h3 {
-  margin:10px 0;
-  font-size:18px;
+.quest-card h2 {
+  font-family: 'Press Start 2P', cursive;
+  margin: 10px 0;
+  font-size: 18px;
+  color: #4f5f52;
 }
 
-.stats-box {
-  margin-top:15px;
-  text-align:left;
-  padding:5px;
+.quest-card p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #4f5f52;
 }
 
-.stat {
-  margin:10px 0;
-  font-size:12px;
-}
-.bar {
-  background:#E4E4E4;
-  border:2px solid #4f5f52;
-  border-radius:6px;
-  width:100%;
-  height:16px;
-  margin-top:4px;
-}
-.progress {
-  background:#4f5f52;
-  height:100%;
-  width:0%;
-  transition: width 1s ease-in-out;
+/* --- Status Tags --- */
+.status {
+  display: inline-block;
+  margin: 5px 0;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  color: #fff;
 }
 
-/* --- Coming Soon Card --- */
-.coming-soon {
-  font-size:16px;
-  font-style:italic;
-  margin-top:15px;
+.completed { background-color: #4CAF50; }
+.active { background-color: #FF9800; }
+.incoming { background-color: #9C27B0; }
+
+/* --- Skills Section --- */
+.skills {
+  text-align: left;
+  margin-top: 15px;
 }
 
-/* --- About Me Section --- */
-.about-me {
-  margin-top:100px;
-  background:#F2E4E7;
-  padding:35px 45px;
-  border:2px solid #4f5f52;
-  border-radius:10px;
-  max-width:950px;
+.skills h3 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  margin-bottom: 5px;
+  color: #4f5f52;
 }
 
-.about-me h2 {
-  font-family:'Press Start 2P', cursive;
-  text-align:center;
-  font-size:24px;
-  margin-bottom:25px;
+.skills ul {
+  padding-left: 20px;
 }
 
-.about-me p {
-  font-family:'Comfortaa', cursive;
-  font-size:18px;
-  line-height:1.8;
-  margin:0;
-  text-align:left;
+.skills li {
+  font-size: 12px;
+  margin-bottom: 3px;
 }
+
+/* --- Stats Bars --- */
+.stats {
+  margin-top: 30px;
+  width: 90%;
+  max-width: 600px;
+}
+
+.stat-bar {
+  margin-bottom: 15px;
+}
+
+.stat-bar span {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  display: block;
+  margin-bottom: 5px;
+  color: #4f5f52;
+}
+
+.bar-container {
+  background: #ddd;
+  border-radius: 10px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  width: 0%;
+  background: #4CAF50;
+  border-radius: 10px;
+  text-align: right;
+  padding-right: 5px;
+  color: #fff;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+/* --- Spacing --- */
+body > * { margin-bottom: 30px; }
 </style>
 </head>
 <body>
 
 <!-- Navigation Bar -->
 <nav>
-  <a href="index.html">HOME</a>
-  <a href="resume.html" target="_blank">RESUME</a>
-  <a href="contact.html">CONTACT</a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="resume.pdf" target="_blank">Resume</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
 </nav>
 
-<!-- Name Typing Animation -->
-<h1 id="name"><span id="text"></span><span class="cursor"></span></h1>
-<p id="incoming">Incoming @ Sephora...</p>
+<h1>PLAYER STATS</h1>
 
-<!-- Typing Sound (optional) -->
-<audio id="typeSound" src="typing.mp3" preload="auto"></audio>
+<!-- Quest Cards -->
+<div class="quests">
 
-<!-- Experience Cards -->
-<div class="experiences">
-  <div class="experience-card" onclick="location.href='experience3.html'">
+  <!-- Sephora Coming Soon -->
+  <div class="quest-card">
     <img src="sephora-logo.png" alt="Sephora Logo">
-    <h3>Sephora</h3>
-    <p class="coming-soon">Coming Soon...</p>
+    <h2>SEPHORA</h2>
+    <p class="status incoming">COMING SOON</p>
+    <div class="skills">
+      <h3>SKILLS UNLOCKED</h3>
+      <ul>
+        <li>To Be Continued...</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="experience-card" onclick="location.href='experience1.html'">
+  <!-- Digital Extremes -->
+  <div class="quest-card">
     <img src="digitalextremes-logo.png" alt="Digital Extremes Logo">
-    <h3>Digital Extremes</h3>
-    <div class="stats-box">
-      <div class="stat">Communication
-        <div class="bar"><div class="progress" style="width:100%;"></div></div>
-      </div>
-      <div class="stat">Marketing
-        <div class="bar"><div class="progress" style="width:100%;"></div></div>
-      </div>
-      <div class="stat">Teamwork
-        <div class="bar"><div class="progress" style="width:100%;"></div></div>
-      </div>
+    <h2>DIGITAL EXTREMES</h2>
+    <p class="status active">ACTIVE</p>
+    <div class="skills">
+      <h3>SKILLS UNLOCKED</h3>
+      <ul>
+        <li>Project Management +5</li>
+        <li>Partnership Communication +5</li>
+        <li>Digital Marketing Strategy +4</li>
+        <li>Content Coordination +4</li>
+        <li>Teamwork & Collaboration +5</li>
+      </ul>
     </div>
   </div>
 
-  <div class="experience-card" onclick="location.href='experience2.html'">
-    <img src="hensonshaving-logo.png" alt="Henson Shaving Logo">
-    <h3>Henson Shaving</h3>
-    <div class="stats-box">
-      <div class="stat">Communication
-        <div class="bar"><div class="progress" style="width:95%;"></div></div>
-      </div>
-      <div class="stat">Marketing
-        <div class="bar"><div class="progress" style="width:95%;"></div></div>
-      </div>
-      <div class="stat">Teamwork
-        <div class="bar"><div class="progress" style="width:100%;"></div></div>
-      </div>
+  <!-- Henson Shaving -->
+  <div class="quest-card">
+    <img src="henson-logo.png" alt="Henson Shaving Logo">
+    <h2>HENSON SHAVING</h2>
+    <p class="status completed">COMPLETED</p>
+    <div class="skills">
+      <h3>SKILLS UNLOCKED</h3>
+      <ul>
+        <li>Client Communication +5</li>
+        <li>Lead Generation +4</li>
+        <li>Sales Presentations +4</li>
+        <li>Workflow Management +4</li>
+      </ul>
     </div>
   </div>
+
 </div>
 
-<!-- About Me Section -->
-<div class="about-me">
-  <h2>ABOUT ME</h2>
-  <p>Hello! I am Jayden, a Legal Studies student with a minor in Human Resource Management from the University of Waterloo. I am currently in my third year of my undergraduate degree and through my internships and coursework, I have gained hands-on experience in business development, marketing, and project coordination. Alongside a strong foundation in legal research, critical thinking, and policy analysis, my interest in law has helped me see how law connects to business and society. I look forward to applying what I learn to practical settings where I can collaborate, problem solve, and contribute to meaningful projects. Let's connect!</p>
+<!-- Stats Bars -->
+<div class="stats">
+  <div class="stat-bar">
+    <span>Communication</span>
+    <div class="bar-container"><div class="bar-fill" data-fill="90%">90%</div></div>
+  </div>
+  <div class="stat-bar">
+    <span>Marketing</span>
+    <div class="bar-container"><div class="bar-fill" data-fill="85%">85%</div></div>
+  </div>
+  <div class="stat-bar">
+    <span>Teamwork</span>
+    <div class="bar-container"><div class="bar-fill" data-fill="95%">95%</div></div>
+  </div>
+  <div class="stat-bar">
+    <span>Project Management</span>
+    <div class="bar-container"><div class="bar-fill" data-fill="80%">80%</div></div>
+  </div>
 </div>
 
 <script>
-/* --- Typing Animation --- */
-const name = "Jayden Truong";
-const text = document.getElementById("text");
-let i = 0;
-const typingSpeed = 120;
-
-function typeWriter(){
-    if(i < name.length){
-        text.textContent += name.charAt(i);
-        i++;
-        setTimeout(typeWriter, typingSpeed);
-    }
-}
-
-/* Animate stats bars on load */
-window.onload = () => {
-    typeWriter();
-    document.querySelectorAll('.progress').forEach((bar) => {
-        const width = bar.style.width;
-        bar.style.width = '0%';
-        setTimeout(() => { bar.style.width = width; }, 200);
-    });
-};
+/* Animate stats bars */
+const bars = document.querySelectorAll('.bar-fill');
+bars.forEach(bar => {
+  const fill = bar.getAttribute('data-fill');
+  setTimeout(() => { bar.style.width = fill; }, 500);
+});
 </script>
 
 </body>
