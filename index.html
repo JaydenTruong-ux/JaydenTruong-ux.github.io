@@ -1,92 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-<meta charset="UTF-8">
-
-<title>Jayden Truong</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-
-<style>
-
-body{
-margin:0;
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-
-/* muted strawberry matcha gradient */
-background: linear-gradient(135deg,#F2E4E7,#B7C9B6);
-
-font-family:'Press Start 2P', cursive;
-}
-
-#name{
-font-size:40px;
-color:#4f5f52;
-text-align:center;
-line-height:1.6;
-}
-
-.cursor{
-border-right:4px solid #4f5f52;
-animation:blink 1s infinite;
-}
-
-@keyframes blink{
-0%{border-color:transparent}
-50%{border-color:#4f5f52}
-100%{border-color:transparent}
-}
-
-</style>
-
-</head>
-
-<body>
-
-<h1 id="name">
-<span id="text"></span><span class="cursor"></span>
-</h1>
-
-<audio id="typeSound" src="typing.mp3"></audio>
-
-<script>
-
-const name = "Jayden Truong";
-const text = document.getElementById("text");
-const sound = document.getElementById("typeSound");
-
-let i = 0;
-
-function typeWriter(){
-
-if(i < name.length){
-
-text.textContent += name.charAt(i);
-
-sound.currentTime = 0;
-sound.play();
-
-i++;
-
-setTimeout(typeWriter,120);
-}
-
-}
-
-window.onload = typeWriter;
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <title>Jayden Truong</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-
 <style>
 body{
   margin:0;
@@ -97,19 +14,16 @@ body{
   background: linear-gradient(135deg,#F2E4E7,#B7C9B6);
   font-family:'Press Start 2P', cursive;
 }
-
 #name{
   font-size:40px;
   color:#4f5f52;
   text-align:center;
   line-height:1.6;
 }
-
 .cursor{
   border-right:4px solid #4f5f52;
   animation:blink 1s infinite;
 }
-
 @keyframes blink{
   0%{border-color:transparent}
   50%{border-color:#4f5f52}
@@ -117,9 +31,7 @@ body{
 }
 </style>
 </head>
-
 <body>
-
 <h1 id="name">
   <span id="text"></span><span class="cursor"></span>
 </h1>
@@ -132,25 +44,19 @@ const text = document.getElementById("text");
 const sound = document.getElementById("typeSound");
 let i = 0;
 
-function typeWriter() {
-    if (i < name.length) {
+function typeWriter(){
+    if(i < name.length){
         text.textContent += name.charAt(i);
         i++;
         setTimeout(typeWriter, 120);
     }
 }
 
-// Play sound once and start typing when the user clicks anywhere
+// Play the sound once and start typing on first click
 window.addEventListener("click", () => {
-    sound.play();   // plays once
-    typeWriter();   // starts typing animation
+    sound.play(); // plays once
+    typeWriter(); // starts typing animation
 }, { once: true });
 </script>
-
 </body>
-</html>
-</script>
-
-</body>
-
 </html>
