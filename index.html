@@ -11,12 +11,12 @@
 /* MUTED LOFI PURPLE PALETTE */
 
 :root{
---lofi1:#8e7ccf;
---lofi2:#a48cd9;
---lofi3:#b79de1;
---lofi4:#c9b3ea;
---lofi5:#ddd0f1;
---textDark:#4e4376;
+--lofi1:#9a8fc9;
+--lofi2:#aca0d3;
+--lofi3:#beb2dd;
+--lofi4:#d0c4e7;
+--lofi5:#e2d7f0;
+--textDark:#4f476e;
 }
 
 /* BODY */
@@ -34,7 +34,7 @@ var(--lofi2)
 );
 
 background-size:400% 400%;
-animation:gradientMove 20s ease infinite;
+animation:gradientMove 22s ease infinite;
 
 display:flex;
 flex-direction:column;
@@ -43,7 +43,7 @@ min-height:100vh;
 padding-bottom:100px;
 }
 
-/* ANIMATED LOFI GRADIENT */
+/* gradient movement */
 
 @keyframes gradientMove{
 0%{background-position:0% 50%;}
@@ -70,11 +70,13 @@ display:flex;
 justify-content:center;
 gap:70px;
 
-box-shadow:0 4px 12px rgba(0,0,0,0.15);
+box-shadow:0 4px 12px rgba(0,0,0,0.12);
 }
 
 nav a{
+
 font-family:'Press Start 2P', cursive;
+
 text-decoration:none;
 
 color:white;
@@ -85,17 +87,20 @@ padding:12px 18px;
 
 border-radius:8px;
 
-transition:all 0.25s ease;
+transition:all .25s ease;
 
 position:relative;
 }
 
 nav a:hover{
+
 background:var(--lofi5);
+
 color:var(--textDark);
+
 }
 
-/* external link arrow */
+/* arrow on resume hover */
 
 nav a::after{
 content:"↗";
@@ -121,8 +126,7 @@ text-align:center;
 
 margin-top:100px;
 
-line-height:1.5;
-
+line-height:1.6;
 }
 
 /* typing cursor */
@@ -172,7 +176,7 @@ max-width:1200px;
 
 }
 
-/* EXPERIENCE CARD */
+/* CARD */
 
 .experience-card{
 
@@ -192,9 +196,9 @@ text-align:center;
 
 cursor:pointer;
 
-box-shadow:0 10px 22px rgba(0,0,0,0.18);
+box-shadow:0 10px 20px rgba(0,0,0,0.15);
 
-transition:all 0.3s ease;
+transition:all .3s ease;
 
 font-family:'Press Start 2P', cursive;
 
@@ -217,36 +221,53 @@ var(--lofi3)
 /* logo */
 
 .experience-card img{
+
 width:120px;
+
 height:120px;
+
 object-fit:contain;
+
 margin-bottom:20px;
+
 }
 
 /* card title */
 
 .experience-card h3{
+
 margin:10px 0;
+
 font-size:18px;
+
 color:var(--textDark);
+
 }
 
 /* stats */
 
 .stats-box{
+
 margin-top:18px;
+
 text-align:left;
+
 }
 
 .stat{
+
 margin:14px 0;
+
 font-size:12px;
+
 color:var(--textDark);
+
 }
 
 /* stat bar */
 
 .bar{
+
 background:#ffffff70;
 
 border:2px solid var(--lofi3);
@@ -254,14 +275,17 @@ border:2px solid var(--lofi3);
 border-radius:6px;
 
 width:100%;
+
 height:16px;
 
 margin-top:5px;
+
 }
 
 .progress{
 
 height:100%;
+
 width:0%;
 
 background: linear-gradient(
@@ -272,6 +296,7 @@ var(--lofi4)
 );
 
 transition:width 1s ease;
+
 }
 
 /* coming soon */
@@ -312,7 +337,7 @@ box-shadow:0 10px 25px rgba(0,0,0,0.15);
 
 }
 
-/* about header */
+/* header */
 
 .about-me h2{
 
@@ -328,7 +353,7 @@ color:var(--textDark);
 
 }
 
-/* about text */
+/* paragraph */
 
 .about-me p{
 
@@ -361,11 +386,15 @@ color:var(--textDark);
 
 <div class="experiences">
 
+<!-- SEPHORA -->
+
 <div class="experience-card" onclick="location.href='experience3.html'">
 <img src="sephora-logo.png">
 <h3>Sephora</h3>
 <p class="coming-soon">Coming Soon...</p>
 </div>
+
+<!-- DIGITAL EXTREMES -->
 
 <div class="experience-card" onclick="location.href='experience1.html'">
 <img src="digitalextremes-logo.png">
@@ -387,6 +416,8 @@ color:var(--textDark);
 
 </div>
 </div>
+
+<!-- HENSON SHAVING -->
 
 <div class="experience-card" onclick="location.href='experience2.html'">
 <img src="hensonshaving-logo.png">
@@ -429,8 +460,6 @@ I look forward to applying what I learn to practical settings where I can collab
 
 <script>
 
-/* typing animation */
-
 const name="Jayden Truong";
 const text=document.getElementById("text");
 
@@ -447,8 +476,6 @@ setTimeout(typeWriter,120);
 window.onload=()=>{
 
 typeWriter();
-
-/* animate stat bars */
 
 document.querySelectorAll('.progress').forEach(bar=>{
 const width=bar.style.width;
