@@ -2,35 +2,34 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Player Stats - Jayden Truong</title>
+<title>Jayden Truong</title>
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 /* --- Body & Theme --- */
-body {
-  margin: 0;
-  font-family: 'Comfortaa', cursive;
-  background: linear-gradient(135deg, #F2E4E7, #B7C9B6);
-  display: flex;
+body{
+  margin:0;
+  font-family:'Comfortaa', cursive;
+  background: linear-gradient(135deg,#F2E4E7,#B7C9B6);
+  display:flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
-  padding-bottom: 50px;
+  min-height:100vh;
 }
 
 /* --- Navigation Bar --- */
 nav {
   background: #B7C9B6;
-  width: 100%;
-  padding: 20px 0;
+  width:100%;
+  padding: 25px 0;
 }
 
 nav ul {
   display: flex;
   justify-content: center;
-  gap: 50px;
+  gap: 60px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -38,147 +37,131 @@ nav ul {
 
 nav ul li a {
   text-decoration: none;
+  font-family:'Press Start 2P', cursive;
   color: #4f5f52;
   transition: color 0.2s;
-  font-family: 'Press Start 2P', cursive;
 }
 
 nav ul li a:hover::after {
   content: " ↗";
 }
 
-/* --- Page Header --- */
-h1 {
-  font-family: 'Press Start 2P', cursive;
-  color: #4f5f52;
-  font-size: 36px;
-  margin: 40px 0 20px 0;
-  text-align: center;
-  letter-spacing: 2px;
+/* --- Name Typing Animation --- */
+#name{
+  font-size: 60px;
+  color:#4f5f52;
+  text-align:center;
+  line-height:1.6;
+  margin-top: 80px;
 }
 
-/* --- Level / Quest Cards --- */
+.cursor{
+  border-right:6px solid #4f5f52;
+  animation:blink 1s infinite;
+}
+
+@keyframes blink{
+  0%{border-color:transparent}
+  50%{border-color:#4f5f52}
+  100%{border-color:transparent}
+}
+
+/* --- Incoming Sephora --- */
+#incoming {
+  font-family:'Press Start 2P', cursive;
+  font-size: 20px;
+  color:#4f5f52;
+  margin-top: 15px;
+  margin-bottom: 50px;
+  font-style: italic;
+}
+
+/* --- Quest / Experience Cards --- */
 .quests {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
-  width: 90%;
-  max-width: 1200px;
+  gap: 40px;
+  margin-bottom: 60px;
 }
 
 .quest-card {
-  width: 300px;
-  background: #F2E4E7;
+  width: 280px;
+  padding: 25px;
   border-radius: 15px;
-  padding: 20px;
+  background: #F2E4E7;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: transform 0.2s, background 0.2s;
+  cursor: pointer;
+  box-shadow: 0px 6px 12px rgba(0,0,0,0.15);
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
 }
 
 .quest-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
   background: #B7C9B6;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
 }
 
 .quest-card img {
   width: 120px;
   height: 120px;
   object-fit: contain;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
-.quest-card h2 {
-  font-family: 'Press Start 2P', cursive;
-  margin: 10px 0;
+.quest-card h3 {
+  margin: 10px 0 5px 0;
+  font-family:'Press Start 2P', cursive;
+  color:#4f5f52;
   font-size: 18px;
-  color: #4f5f52;
 }
 
 .quest-card p {
   margin: 5px 0;
+  color:#4f5f52;
   font-size: 14px;
-  color: #4f5f52;
 }
 
-/* --- Status Tags --- */
-.status {
-  display: inline-block;
-  margin: 5px 0;
-  padding: 5px 10px;
-  border-radius: 10px;
-  font-family: 'Press Start 2P', cursive;
-  font-size: 10px;
-  color: #fff;
+/* --- About Me Section --- */
+.about-me {
+  width: 80%;
+  max-width: 800px;
+  padding: 30px;
+  border-radius: 15px;
+  background:#F2E4E7;
+  margin-bottom: 80px;
+  line-height:1.8;
 }
 
-.completed { background-color: #4CAF50; }
-.active { background-color: #FF9800; }
-.incoming { background-color: #9C27B0; }
-
-/* --- Skills Section --- */
-.skills {
-  text-align: left;
-  margin-top: 15px;
+.about-me h2 {
+  font-family:'Press Start 2P', cursive;
+  font-size: 20px;
+  margin-bottom: 20px;
+  color:#4f5f52;
 }
 
-.skills h3 {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 12px;
-  margin-bottom: 5px;
-  color: #4f5f52;
+.about-me p {
+  font-family:'Comfortaa', cursive;
+  font-size: 16px;
+  color:#4f5f52;
 }
 
-.skills ul {
-  padding-left: 20px;
-}
-
-.skills li {
-  font-size: 12px;
-  margin-bottom: 3px;
-}
-
-/* --- Stats Bars --- */
+/* --- Stats Box --- */
 .stats {
-  margin-top: 30px;
-  width: 90%;
-  max-width: 600px;
+  margin-top: 15px;
+  text-align:left;
 }
 
-.stat-bar {
-  margin-bottom: 15px;
+.stats h4 {
+  font-family:'Press Start 2P', cursive;
+  font-size: 14px;
+  margin-bottom: 8px;
 }
 
-.stat-bar span {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 12px;
-  display: block;
-  margin-bottom: 5px;
-  color: #4f5f52;
+.stats ul {
+  margin:0;
+  padding-left:20px;
 }
-
-.bar-container {
-  background: #ddd;
-  border-radius: 10px;
-  height: 20px;
-  overflow: hidden;
-}
-
-.bar-fill {
-  height: 100%;
-  width: 0%;
-  background: #4CAF50;
-  border-radius: 10px;
-  text-align: right;
-  padding-right: 5px;
-  color: #fff;
-  font-size: 12px;
-  line-height: 20px;
-}
-
-/* --- Spacing --- */
-body > * { margin-bottom: 30px; }
 </style>
 </head>
 <body>
@@ -192,86 +175,87 @@ body > * { margin-bottom: 30px; }
   </ul>
 </nav>
 
-<h1>PLAYER STATS</h1>
+<!-- Name Typing Animation -->
+<h1 id="name"><span id="text"></span><span class="cursor"></span></h1>
 
-<!-- Quest Cards -->
+<!-- Incoming Sephora -->
+<p id="incoming">Incoming @ Sephora...</p>
+
+<!-- Quests / Experiences -->
 <div class="quests">
-
-  <!-- Sephora Coming Soon -->
-  <div class="quest-card">
+  <!-- Sephora -->
+  <div class="quest-card" onclick="window.location.href='experience3.html'">
     <img src="sephora-logo.png" alt="Sephora Logo">
-    <h2>SEPHORA</h2>
-    <p class="status incoming">COMING SOON</p>
-    <div class="skills">
-      <h3>SKILLS UNLOCKED</h3>
+    <h3>SEPHORA</h3>
+    <p>ROLE: Brand Communications</p>
+    <p>STATUS: COMING SOON</p>
+    <div class="stats">
+      <h4>SKILLS UNLOCKED</h4>
       <ul>
-        <li>To Be Continued...</li>
+        <li>Customer Engagement +7</li>
+        <li>Brand Communication +7</li>
+        <li>Teamwork +7</li>
       </ul>
     </div>
   </div>
 
   <!-- Digital Extremes -->
-  <div class="quest-card">
+  <div class="quest-card" onclick="window.location.href='experience1.html'">
     <img src="digitalextremes-logo.png" alt="Digital Extremes Logo">
-    <h2>DIGITAL EXTREMES</h2>
-    <p class="status active">ACTIVE</p>
-    <div class="skills">
-      <h3>SKILLS UNLOCKED</h3>
+    <h3>DIGITAL EXTREMES</h3>
+    <p>ROLE: Partner Marketing Coordinator</p>
+    <p>STATUS: COMPLETED</p>
+    <div class="stats">
+      <h4>SKILLS UNLOCKED</h4>
       <ul>
-        <li>Project Management +5</li>
-        <li>Partnership Communication +5</li>
-        <li>Digital Marketing Strategy +4</li>
-        <li>Content Coordination +4</li>
-        <li>Teamwork & Collaboration +5</li>
+        <li>Project Management +10</li>
+        <li>Partnership Communication +10</li>
+        <li>Digital Marketing Strategy +10</li>
+        <li>Content Coordination +10</li>
+        <li>Teamwork +10</li>
       </ul>
     </div>
   </div>
 
   <!-- Henson Shaving -->
-  <div class="quest-card">
+  <div class="quest-card" onclick="window.location.href='experience2.html'">
     <img src="henson-logo.png" alt="Henson Shaving Logo">
-    <h2>HENSON SHAVING</h2>
-    <p class="status completed">COMPLETED</p>
-    <div class="skills">
-      <h3>SKILLS UNLOCKED</h3>
+    <h3>HENSON SHAVING</h3>
+    <p>ROLE: Business Development Coordinator</p>
+    <p>STATUS: COMPLETED</p>
+    <div class="stats">
+      <h4>SKILLS UNLOCKED</h4>
       <ul>
-        <li>Client Communication +5</li>
-        <li>Lead Generation +4</li>
-        <li>Sales Presentations +4</li>
-        <li>Workflow Management +4</li>
+        <li>Client Engagement +9</li>
+        <li>Sales Strategy +9</li>
+        <li>Lead Management +9</li>
+        <li>Team Collaboration +9</li>
       </ul>
     </div>
   </div>
-
 </div>
 
-<!-- Stats Bars -->
-<div class="stats">
-  <div class="stat-bar">
-    <span>Communication</span>
-    <div class="bar-container"><div class="bar-fill" data-fill="90%">90%</div></div>
-  </div>
-  <div class="stat-bar">
-    <span>Marketing</span>
-    <div class="bar-container"><div class="bar-fill" data-fill="85%">85%</div></div>
-  </div>
-  <div class="stat-bar">
-    <span>Teamwork</span>
-    <div class="bar-container"><div class="bar-fill" data-fill="95%">95%</div></div>
-  </div>
-  <div class="stat-bar">
-    <span>Project Management</span>
-    <div class="bar-container"><div class="bar-fill" data-fill="80%">80%</div></div>
-  </div>
+<!-- About Me Section -->
+<div class="about-me">
+  <h2>About Me</h2>
+  <p>Hello! I am Jayden, a Legal Studies student with a minor in Human Resource Management from the University of Waterloo. I am currently in my third year of my undergraduate degree and through my internships and coursework, I have gained hands-on experience in business development, marketing, and project coordination. Alongside a strong foundation in legal research, critical thinking, and policy analysis, my interest in law has helped me see how law connects to business and society. I look forward to applying what I learn to practical settings where I can collaborate, problem solve, and contribute to meaningful projects. Let's connect!</p>
 </div>
 
 <script>
-/* Animate stats bars */
-const bars = document.querySelectorAll('.bar-fill');
-bars.forEach(bar => {
-  const fill = bar.getAttribute('data-fill');
-  setTimeout(() => { bar.style.width = fill; }, 500);
-});
+/* --- Typing Animation --- */
+const name = "Jayden Truong";
+const text = document.getElementById("text");
+let i = 0;
+const typingSpeed = 120;
+
+function typeWriter(){
+    if(i < name.length){
+        text.textContent += name.charAt(i);
+        i++;
+        setTimeout(typeWriter, typingSpeed);
+    }
+}
+window.onload = typeWriter;
 </script>
 
 </body>
