@@ -220,34 +220,57 @@ nav a:hover{
 }
 
 /* FLOATING PIXEL STARS */
-
 .stars{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-pointer-events:none;
-z-index:-1;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  z-index:-1;
 }
 
 .star{
-position:absolute;
-background:white;
-opacity:0.8;
-animation:floatStar linear infinite, twinkle ease-in-out infinite;
+  position:absolute;
+  width:2px;
+  height:2px;
+  background:white;
+  opacity:0.8;
+  animation:floatStar linear infinite, twinkle ease-in-out infinite;
+}
+
+/* Make each star look like a pixel cross */
+.star::before, .star::after{
+  content:'';
+  position:absolute;
+  background:white;
+}
+
+.star::before{
+  width:2px;
+  height:6px;
+  left:50%;
+  top:-2px;
+  transform:translateX(-50%);
+}
+
+.star::after{
+  width:6px;
+  height:2px;
+  left:-2px;
+  top:50%;
+  transform:translateY(-50%);
 }
 
 @keyframes floatStar{
-from{transform:translateY(100vh);}
-to{transform:translateY(-10vh);}
+  from{transform:translateY(100vh);}
+  to{transform:translateY(-10vh);}
 }
 
 @keyframes twinkle{
-0%,100%{opacity:0.2;transform:scale(0.8);}
-50%{opacity:1;transform:scale(1.3);}
+  0%,100%{opacity:0.2;transform:scale(0.8);}
+  50%{opacity:1;transform:scale(1.3);}
 }
-
 </style>
 </head>
 
@@ -349,23 +372,22 @@ const starsContainer=document.querySelector(".stars");
 const numberOfStars=70;
 
 for(let i=0;i<numberOfStars;i++){
+  const star=document.createElement("div");
+  star.classList.add("star");
 
-const star=document.createElement("div");
-star.classList.add("star");
+  star.style.left=Math.random()*100+"vw";
+  star.style.top=Math.random()*100+"vh";
 
-star.style.left=Math.random()*100+"vw";
-star.style.top=Math.random()*100+"vh";
+  const size=2+Math.random()*2;
+  star.style.width=size+"px";
+  star.style.height=size+"px";
 
-const size=2+Math.random()*3;
-star.style.width=size+"px";
-star.style.height=size+"px";
+  const floatSpeed=10+Math.random()*10;
+  const twinkleSpeed=2+Math.random()*3;
 
-const floatSpeed=10+Math.random()*10;
-const twinkleSpeed=2+Math.random()*3;
+  star.style.animationDuration=floatSpeed+"s,"+twinkleSpeed+"s";
 
-star.style.animationDuration=floatSpeed+"s,"+twinkleSpeed+"s";
-
-starsContainer.appendChild(star);
+  starsContainer.appendChild(star);
 }
 </script>
 
