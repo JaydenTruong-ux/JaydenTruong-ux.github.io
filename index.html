@@ -4,273 +4,401 @@
 <meta charset="UTF-8">
 <title>Jayden Truong</title>
 
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-/* --- Body & Theme --- */
+
+/* LOFI COLOR VARIABLES */
+
+:root{
+--lofi1:#674ab3;
+--lofi2:#a348a6;
+--lofi3:#9f63c4;
+--lofi4:#9075d8;
+--lofi5:#cea2d7;
+}
+
+/* BODY */
+
 body{
-  margin:0;
-  font-family:'Comfortaa', cursive;
-  background: linear-gradient(135deg,#F2E4E7,#B7C9B6);
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  min-height:100vh;
-  padding-bottom:70px;
+margin:0;
+font-family:'Comfortaa', cursive;
+
+background: linear-gradient(
+135deg,
+var(--lofi1),
+var(--lofi2),
+var(--lofi3),
+var(--lofi4),
+var(--lofi5)
+);
+
+background-size:400% 400%;
+animation: lofiGradient 18s ease infinite;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+min-height:100vh;
+padding-bottom:80px;
 }
 
-/* --- Navigation Bar --- */
-nav {
-  background: #B7C9B6;
-  width:100%;
-  padding: 25px 0;
-  display:flex;
-  justify-content:center;
-  gap:50px;
+/* SMOOTH GRADIENT ANIMATION */
+
+@keyframes lofiGradient{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
-nav a {
-  font-family:'Press Start 2P', cursive;
-  text-decoration:none;
-  color:#4f5f52;
-  border:2px solid #4f5f52;
-  padding:10px 16px;
-  border-radius:6px;
-  transition: all 0.2s;
-  position: relative;
+/* NAVBAR */
+
+nav{
+background: linear-gradient(90deg,var(--lofi2),var(--lofi4));
+width:100%;
+padding:30px 0;
+display:flex;
+justify-content:center;
+gap:60px;
 }
 
-nav a:hover {
-  background:#4f5f52;
-  color:#F2E4E7;
+nav a{
+font-family:'Press Start 2P', cursive;
+text-decoration:none;
+color:white;
+border:2px solid white;
+padding:12px 18px;
+border-radius:8px;
+transition:all 0.25s ease;
+position:relative;
 }
 
-nav a::after {
-  content:"↗"; 
-  display:none;
-  margin-left:5px;
+nav a:hover{
+background:var(--lofi5);
+color:var(--lofi1);
 }
 
-nav a:hover::after {
-  display:inline;
+/* external arrow hover */
+
+nav a::after{
+content:"↗";
+display:none;
+margin-left:6px;
 }
 
-/* --- Name Typing Animation --- */
+nav a:hover::after{
+display:inline;
+}
+
+/* NAME */
+
 #name{
-  font-family:'Press Start 2P', cursive;
-  font-size:90px;
-  color:#4f5f52;
-  text-align:center;
-  line-height:1.6;
-  margin-top:70px;
+font-family:'Press Start 2P', cursive;
+font-size:90px;
+color:white;
+text-align:center;
+line-height:1.6;
+margin-top:90px;
 }
+
+/* typing cursor */
 
 .cursor{
-  border-right:6px solid #4f5f52;
-  animation:blink 1s infinite;
+border-right:6px solid white;
+animation:blink 1s infinite;
 }
 
 @keyframes blink{
-  0%{border-color:transparent}
-  50%{border-color:#4f5f52}
-  100%{border-color:transparent}
+0%{border-color:transparent}
+50%{border-color:white}
+100%{border-color:transparent}
 }
 
-/* --- Incoming Role --- */
-#incoming {
-  font-family:'Press Start 2P', cursive;
-  font-size:22px;
-  font-style:normal;
-  color:#4f5f52;
-  margin-top:20px;
+/* incoming role */
+
+#incoming{
+font-family:'Press Start 2P', cursive;
+font-size:22px;
+color:white;
+margin-top:30px;
 }
 
-/* --- Experience Cards --- */
-.experiences {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 50px;
-  margin-top: 80px;
-  width:100%;
-  max-width:1200px;
+/* EXPERIENCE SECTION */
+
+.experiences{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:60px;
+margin-top:100px;
+width:100%;
+max-width:1200px;
 }
 
-.experience-card {
-  width:300px;
-  padding:25px;
-  border-radius:10px;
-  background:#F2E4E7;
-  text-align:center;
-  cursor:pointer;
-  box-shadow:0px 6px 12px rgba(0,0,0,0.15);
-  transition: transform 0.2s, background 0.2s;
-  font-family:'Press Start 2P', cursive;
+/* EXPERIENCE CARD */
+
+.experience-card{
+
+width:300px;
+padding:30px;
+
+border-radius:12px;
+
+background: linear-gradient(
+145deg,
+var(--lofi5),
+var(--lofi3)
+);
+
+text-align:center;
+cursor:pointer;
+
+box-shadow:0px 8px 20px rgba(0,0,0,0.25);
+
+transition:all 0.3s ease;
+
+font-family:'Press Start 2P', cursive;
 }
 
-.experience-card:hover {
-  transform:translateY(-7px);
-  background:#B7C9B6;
+/* hover effect */
+
+.experience-card:hover{
+
+transform:translateY(-8px);
+
+background: linear-gradient(
+145deg,
+var(--lofi4),
+var(--lofi2)
+);
+
 }
 
-.experience-card img {
-  width:120px;
-  height:120px;
-  object-fit:contain;
-  margin-bottom:20px;
+/* logos */
+
+.experience-card img{
+width:120px;
+height:120px;
+object-fit:contain;
+margin-bottom:20px;
 }
 
-.experience-card h3 {
-  margin:10px 0;
-  font-size:18px;
+.experience-card h3{
+margin:10px 0;
+font-size:18px;
+color:white;
 }
 
-.stats-box {
-  margin-top:15px;
-  text-align:left;
-  padding:5px;
+/* stat bars */
+
+.stats-box{
+margin-top:15px;
+text-align:left;
+padding:5px;
 }
 
-.stat {
-  margin:10px 0;
-  font-size:12px;
-}
-.bar {
-  background:#E4E4E4;
-  border:2px solid #4f5f52;
-  border-radius:6px;
-  width:100%;
-  height:16px;
-  margin-top:4px;
-}
-.progress {
-  background:#4f5f52;
-  height:100%;
-  width:0%;
-  transition: width 1s ease-in-out;
+.stat{
+margin:12px 0;
+font-size:12px;
+color:white;
 }
 
-/* --- Coming Soon Card --- */
-.coming-soon {
-  font-size:16px;
-  font-style:italic;
-  margin-top:15px;
+.bar{
+background:#ffffff30;
+border:2px solid var(--lofi1);
+border-radius:6px;
+width:100%;
+height:16px;
+margin-top:4px;
 }
 
-/* --- About Me Section --- */
-.about-me {
-  margin-top:100px;
-  background:#F2E4E7;
-  padding:35px 45px;
-  border:2px solid #4f5f52;
-  border-radius:10px;
-  max-width:950px;
+.progress{
+height:100%;
+width:0%;
+
+background: linear-gradient(
+90deg,
+var(--lofi1),
+var(--lofi2),
+var(--lofi5)
+);
+
+transition:width 1s ease-in-out;
 }
 
-.about-me h2 {
-  font-family:'Press Start 2P', cursive;
-  text-align:center;
-  font-size:24px;
-  margin-bottom:25px;
+/* coming soon */
+
+.coming-soon{
+font-size:16px;
+font-style:italic;
+margin-top:15px;
+color:white;
 }
 
-.about-me p {
-  font-family:'Comfortaa', cursive;
-  font-size:18px;
-  line-height:1.8;
-  margin:0;
-  text-align:left;
+/* ABOUT ME */
+
+.about-me{
+
+margin-top:120px;
+
+background: linear-gradient(
+145deg,
+var(--lofi5),
+var(--lofi3)
+);
+
+padding:40px 50px;
+
+border:2px solid var(--lofi1);
+
+border-radius:12px;
+
+max-width:950px;
+
+box-shadow:0px 8px 20px rgba(0,0,0,0.25);
+
 }
+
+.about-me h2{
+font-family:'Press Start 2P', cursive;
+text-align:center;
+font-size:26px;
+margin-bottom:30px;
+color:white;
+}
+
+.about-me p{
+font-family:'Comfortaa', cursive;
+font-size:19px;
+line-height:1.9;
+margin:0;
+color:white;
+}
+
 </style>
 </head>
+
 <body>
 
-<!-- Navigation Bar -->
+<!-- NAVBAR -->
+
 <nav>
-  <a href="index.html">HOME</a>
-  <a href="JaydenTruong_Resume.pdf" target="_blank">RESUME</a>
-  <a href="contact.html">CONTACT</a>
+<a href="index.html">HOME</a>
+<a href="JaydenTruong_Resume.pdf" target="_blank">RESUME</a>
+<a href="contact.html">CONTACT</a>
 </nav>
 
-<!-- Name Typing Animation -->
+<!-- NAME -->
+
 <h1 id="name"><span id="text"></span><span class="cursor"></span></h1>
+
 <p id="incoming">Incoming @ Sephora...</p>
 
-<!-- Typing Sound (optional) -->
-<audio id="typeSound" src="typing.mp3" preload="auto"></audio>
+<!-- EXPERIENCE -->
 
-<!-- Experience Cards -->
 <div class="experiences">
-  <div class="experience-card" onclick="location.href='experience3.html'">
-    <img src="sephora-logo.png" alt="Sephora Logo">
-    <h3>Sephora</h3>
-    <p class="coming-soon">Coming Soon...</p>
-  </div>
 
-  <div class="experience-card" onclick="location.href='experience1.html'">
-    <img src="digitalextremes-logo.png" alt="Digital Extremes Logo">
-    <h3>Digital Extremes</h3>
-    <div class="stats-box">
-      <div class="stat">Communication
-        <div class="bar"><div class="progress" style="width:100%;"></div></div>
-      </div>
-      <div class="stat">Marketing
-        <div class="bar"><div class="progress" style="width:100%;"></div></div>
-      </div>
-      <div class="stat">Teamwork
-        <div class="bar"><div class="progress" style="width:100%;"></div></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="experience-card" onclick="location.href='experience2.html'">
-    <img src="hensonshaving-logo.png" alt="Henson Shaving Logo">
-    <h3>Henson Shaving</h3>
-    <div class="stats-box">
-      <div class="stat">Communication
-        <div class="bar"><div class="progress" style="width:95%;"></div></div>
-      </div>
-      <div class="stat">Marketing
-        <div class="bar"><div class="progress" style="width:95%;"></div></div>
-      </div>
-      <div class="stat">Teamwork
-        <div class="bar"><div class="progress" style="width:100%;"></div></div>
-      </div>
-    </div>
-  </div>
+<div class="experience-card" onclick="location.href='experience3.html'">
+<img src="sephora-logo.png">
+<h3>Sephora</h3>
+<p class="coming-soon">Coming Soon...</p>
 </div>
 
-<!-- About Me Section -->
+<div class="experience-card" onclick="location.href='experience1.html'">
+<img src="digitalextremes-logo.png">
+<h3>Digital Extremes</h3>
+
+<div class="stats-box">
+
+<div class="stat">Communication
+<div class="bar"><div class="progress" style="width:100%"></div></div>
+</div>
+
+<div class="stat">Marketing
+<div class="bar"><div class="progress" style="width:100%"></div></div>
+</div>
+
+<div class="stat">Teamwork
+<div class="bar"><div class="progress" style="width:100%"></div></div>
+</div>
+
+</div>
+</div>
+
+<div class="experience-card" onclick="location.href='experience2.html'">
+<img src="hensonshaving-logo.png">
+<h3>Henson Shaving</h3>
+
+<div class="stats-box">
+
+<div class="stat">Communication
+<div class="bar"><div class="progress" style="width:95%"></div></div>
+</div>
+
+<div class="stat">Marketing
+<div class="bar"><div class="progress" style="width:95%"></div></div>
+</div>
+
+<div class="stat">Teamwork
+<div class="bar"><div class="progress" style="width:100%"></div></div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<!-- ABOUT ME -->
+
 <div class="about-me">
-  <h2>ABOUT ME</h2>
-  <p>Hello! I am Jayden, a Legal Studies student with a minor in Human Resource Management from the University of Waterloo. I am currently in my third year of my undergraduate degree and through my internships and coursework, I have gained hands-on experience in business development, marketing, and project coordination. Alongside a strong foundation in legal research, critical thinking, and policy analysis, my interest in law has helped me see how law connects to business and society. I look forward to applying what I learn to practical settings where I can collaborate, problem solve, and contribute to meaningful projects. Let's connect!</p>
+
+<h2>ABOUT ME</h2>
+
+<p>
+Hello! I am Jayden, a Legal Studies student with a minor in Human Resource Management from the University of Waterloo. 
+
+I am currently in my third year of my undergraduate degree and through my internships and coursework, I have gained hands-on experience in business development, marketing, and project coordination. 
+
+Alongside a strong foundation in legal research, critical thinking, and policy analysis, my interest in law has helped me see how law connects to business and society. 
+
+I look forward to applying what I learn to practical settings where I can collaborate, problem solve, and contribute to meaningful projects. Let's connect!
+</p>
+
 </div>
 
 <script>
-/* --- Typing Animation --- */
-const name = "Jayden Truong";
-const text = document.getElementById("text");
-let i = 0;
-const typingSpeed = 120;
+
+/* typing animation */
+
+const name="Jayden Truong";
+const text=document.getElementById("text");
+
+let i=0;
 
 function typeWriter(){
-    if(i < name.length){
-        text.textContent += name.charAt(i);
-        i++;
-        setTimeout(typeWriter, typingSpeed);
-    }
+if(i<name.length){
+text.textContent+=name.charAt(i);
+i++;
+setTimeout(typeWriter,120);
+}
 }
 
-/* Animate stats bars on load */
-window.onload = () => {
-    typeWriter();
-    document.querySelectorAll('.progress').forEach((bar) => {
-        const width = bar.style.width;
-        bar.style.width = '0%';
-        setTimeout(() => { bar.style.width = width; }, 200);
-    });
+/* stat animation */
+
+window.onload=()=>{
+typeWriter();
+
+document.querySelectorAll('.progress').forEach((bar)=>{
+const width=bar.style.width;
+bar.style.width='0%';
+
+setTimeout(()=>{
+bar.style.width=width;
+},200);
+});
+
 };
+
 </script>
 
 </body>
