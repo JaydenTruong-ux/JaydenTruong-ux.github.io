@@ -94,6 +94,25 @@ nav a:hover{
   100%{border-color:transparent}
 }
 
+/* Player Box */
+#player-box {
+  font-family: 'Press Start 2P', cursive;
+  color: #f3f0f9;
+  background: repeating-linear-gradient(
+    45deg,
+    #5e577d,
+    #5e577d 4px,
+    #4f4370 4px,
+    #4f4370 8px
+  );
+  border: 3px solid var(--dustyLilac);
+  border-radius: 6px;
+  padding: 12px 20px;
+  margin: 20px 0;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+
 #incoming{
   font-family:'Press Start 2P', cursive;
   font-size:22px;
@@ -272,7 +291,6 @@ nav a:hover{
   background-color:var(--softViolet);
 }
 
-/* Individual skill pixel patterns using box-shadow */
 .mastery-list ul li.github::before{
   box-shadow:
     2px 0 var(--mutedPurple),
@@ -387,6 +405,9 @@ nav a:hover{
 </nav>
 
 <h1 id="name"><span id="text"></span><span class="cursor"></span></h1>
+
+<!-- Player Box -->
+<div id="player-box">LVL 3 Player at the University of Waterloo</div>
 
 <p id="incoming">Incoming @ Sephora...</p>
 
