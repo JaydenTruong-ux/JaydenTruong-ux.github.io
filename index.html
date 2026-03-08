@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <title>Jayden Truong</title>
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 /* --- Body & Theme --- */
@@ -65,14 +65,6 @@ nav ul li a:hover {
   100%{border-color:transparent}
 }
 
-/* --- Italic subtitle below name --- */
-#subtitle {
-  font-style: italic;
-  color: #4f5f52;
-  text-align:center;
-  margin-top: 10px;
-}
-
 /* --- Experience Cards --- */
 .experiences {
   display: flex;
@@ -111,10 +103,30 @@ nav ul li a:hover {
   color:#4f5f52;
 }
 
-.experience-card p {
-  margin: 0;
-  color:#4f5f52;
-  font-size: 12px;
+/* --- About Me Section --- */
+.about-me-card {
+  max-width: 800px;
+  background: #F2E4E7;
+  border-radius: 10px;
+  padding: 30px;
+  margin: 50px auto;
+  text-align: left;
+  font-family: 'Comfortaa', cursive;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
+.about-me-card h2 {
+  color: #4f5f52;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: 'Comfortaa', cursive; /* Header now uses Comfortaa */
+}
+
+.about-me-card p {
+  color: #4f5f52;
+  line-height: 1.8;
+  font-size: 16px;
+  font-family: 'Comfortaa', cursive; /* Paragraph uses Comfortaa */
 }
 </style>
 </head>
@@ -133,30 +145,28 @@ nav ul li a:hover {
 <h1 id="name">
   <span id="text"></span><span class="cursor"></span>
 </h1>
-<p id="subtitle">Incoming @ Sephora...</p>
-
-<!-- Typing Sound (optional) -->
 <audio id="typeSound" src="typing.mp3" preload="auto"></audio>
 
 <!-- Experience Cards -->
 <div class="experiences">
-  <!-- Experience 3 (Sephora) -->
   <div class="experience-card" onclick="location.href='experience3.html'">
     <img src="sephora-logo.png" alt="Sephora Logo" />
     <h3>Sephora</h3>
   </div>
-
-  <!-- Experience 1 (Digital Extremes) -->
   <div class="experience-card" onclick="location.href='experience1.html'">
     <img src="digitalextremes-logo.png" alt="Digital Extremes Logo" />
     <h3>Digital Extremes</h3>
   </div>
-
-  <!-- Experience 2 (Henson Shaving) -->
   <div class="experience-card" onclick="location.href='experience2.html'">
     <img src="hensonshaving-logo.png" alt="Henson Shaving Logo" />
     <h3>Henson Shaving</h3>
   </div>
+</div>
+
+<!-- About Me Section (Below Experience Cards) -->
+<div class="about-me-card">
+  <h2>About Me</h2>
+  <p>Hello! I am Jayden, a Legal Studies student with a minor in Human Resource Management from the University of Waterloo. I am currently in my third year of my undergraduate degree and through my internships and coursework, I have gained hands-on experience in business development, marketing, and project coordination. Alongside a strong foundation in legal research, critical thinking, and policy analysis, my interest in law has helped me see how law connects to business and society. I look forward to applying what I learn to practical settings where I can collaborate, problem solve, and contribute to meaningful projects. Let's connect!</p>
 </div>
 
 <script>
@@ -166,7 +176,6 @@ const text = document.getElementById("text");
 let i = 0;
 const typingSpeed = 120;
 
-// Auto-start typing animation
 function typeWriter(){
     if(i < name.length){
         text.textContent += name.charAt(i);
