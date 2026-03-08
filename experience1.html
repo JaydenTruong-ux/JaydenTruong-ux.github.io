@@ -17,6 +17,7 @@ body {
   flex-direction: column;
   align-items: center;
   min-height:100vh;
+  padding-bottom: 50px;
 }
 
 /* --- Navigation Bar --- */
@@ -39,6 +40,7 @@ nav ul li a {
   text-decoration: none;
   color: #4f5f52;
   transition: color 0.2s;
+  font-weight: bold;
 }
 
 nav ul li a:hover {
@@ -49,22 +51,32 @@ nav ul li a:hover {
 h1 {
   text-align: center;
   color: #4f5f52;
-  margin: 20px auto 5px auto;
+  margin: 30px auto 10px auto;
+  font-size: 32px;
 }
 
 p.employment-dates {
   text-align: center;
   font-style: italic;
   color: #4f5f52;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 /* --- Company Logo --- */
 img.company-logo {
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   object-fit: contain;
-  margin: 20px 0;
+  margin: 30px 0;
+  border-radius: 10px;
+  border: 2px solid #4f5f52;
+}
+
+/* --- Company Website Link --- */
+a.company-link {
+  color:#4f5f52;
+  text-decoration: underline;
+  font-weight: bold;
 }
 
 /* --- Two-column layout --- */
@@ -73,24 +85,44 @@ img.company-logo {
   flex-wrap: wrap;
   max-width: 1000px;
   gap: 50px;
-  padding: 0 20px 50px 20px;
+  padding: 0 20px;
 }
 
-.left-column, .right-column {
-  flex: 1;
+/* Left column = What I Did */
+.left-column {
+  flex: 2;
   min-width: 300px;
 }
 
+/* Right column = Skills Learned box */
+.right-column {
+  flex: 1;
+  min-width: 250px;
+  background: #E3F0E1; /* light greenish box */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Lists inside columns */
 .left-column ul, .right-column ul {
   padding-left: 20px;
+  margin-top: 10px;
 }
 
 /* Headings */
 h2 {
   color: #4f5f52;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  font-size: 20px;
 }
 
+/* Skills box heading */
+.right-column h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
 </style>
 </head>
 <body>
@@ -106,8 +138,16 @@ h2 {
 
 <!-- Company Experience -->
 <img src="digitalextremes-logo.png" alt="Digital Extremes Logo" class="company-logo">
+
 <h1>Partner Marketing Coordinator @ Digital Extremes</h1>
 <p class="employment-dates">Sept 2025 – Dec 2025</p>
+
+<!-- Company Website Link -->
+<p style="text-align:center; margin-bottom: 40px;">
+  <a href="https://www.digitalextremes.com/" target="_blank" class="company-link">
+    Visit Digital Extremes Website
+  </a>
+</p>
 
 <div class="content-container">
   <!-- What I Did -->
@@ -126,7 +166,7 @@ h2 {
 
   <!-- Skills Learned -->
   <div class="right-column">
-    <h2>Skills Learned:</h2>
+    <h2>Skills Learned</h2>
     <ul>
       <li>Project management</li>
       <li>Partnership communication</li>
