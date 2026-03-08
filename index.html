@@ -18,18 +18,20 @@ body {
   flex-direction: column;
   align-items: center;
   min-height:100vh;
+  padding: 40px 20px;
 }
 
 /* --- Navigation Bar --- */
 nav {
   background: #B7C9B6;
   width:100%;
-  padding: 20px 0;
+  padding: 25px 0;
+  margin-bottom: 50px;
 }
 nav ul {
   display: flex;
   justify-content: center;
-  gap: 50px;
+  gap: 60px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -39,6 +41,7 @@ nav ul li a {
   color: #4f5f52;
   transition: color 0.2s;
   position: relative;
+  font-size: 14px;
 }
 nav ul li a:hover {
   color: #F2E4E7;
@@ -50,14 +53,15 @@ nav ul li a:hover::after {
 
 /* --- Name Typing Animation --- */
 #name{
-  font-size: 40px;
+  font-size: 60px; /* bigger name */
   color:#4f5f52;
   text-align:center;
-  line-height:1.6;
+  line-height:1.8;
   margin-top: 50px;
+  font-family: 'Press Start 2P', cursive;
 }
 .cursor{
-  border-right:4px solid #4f5f52;
+  border-right:5px solid #4f5f52;
   animation:blink 1s infinite;
 }
 @keyframes blink{
@@ -69,21 +73,21 @@ nav ul li a:hover::after {
 /* --- Incoming Status --- */
 #incoming {
   font-family:'Press Start 2P', cursive;
-  font-size: 12px;
+  font-size: 16px; /* slightly larger */
   font-weight: normal;
   color: #4f5f52;
-  margin-top: 10px;
-  margin-bottom: 40px;
+  margin-top: 20px;
+  margin-bottom: 60px;
   text-align:center;
 }
 
 /* --- Section Title --- */
 .section-title {
   font-family: 'Press Start 2P', cursive;
-  font-size: 22px;
+  font-size: 28px;
   color: #4f5f52;
-  margin-top: 20px;
-  margin-bottom: 30px;
+  margin-top: 40px;
+  margin-bottom: 40px;
   text-align: center;
 }
 
@@ -92,37 +96,38 @@ nav ul li a:hover::after {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
-  margin-bottom: 50px;
+  gap: 40px;
+  margin-bottom: 70px;
 }
 .experience-card {
-  width: 260px;
-  padding: 25px;
+  width: 280px;
+  padding: 30px;
   border-radius: 12px;
   background: #F2E4E7;
   text-align: center;
   cursor: pointer;
   border: 3px solid #4f5f52;
-  box-shadow: 6px 6px 0px #4f5f52;
+  box-shadow: 8px 8px 0px #4f5f52;
   transition: transform 0.2s;
 }
 .experience-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
 }
 .experience-card img {
-  width: 100px;
-  height: 100px;
+  width: 120px; /* bigger logo */
+  height: 120px;
   object-fit: contain;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 .experience-card h3 {
-  margin: 10px 0 5px 0;
+  margin: 15px 0 10px 0;
   font-family:'Press Start 2P', cursive;
+  font-size: 16px;
   color:#4f5f52;
 }
 .quest-label {
   font-family: 'Press Start 2P', cursive;
-  font-size: 10px;
+  font-size: 12px;
   color: #4f5f52;
   margin-bottom: 10px;
   display:block;
@@ -131,23 +136,23 @@ nav ul li a:hover::after {
 /* --- About Me Box --- */
 .about-box {
   font-family: 'Comfortaa', cursive;
-  max-width: 800px;
-  padding: 25px;
-  border: 2px solid #4f5f52;
+  max-width: 850px;
+  padding: 35px;
+  border: 3px solid #4f5f52;
   background: #F2E4E7;
   border-radius: 12px;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
 .about-box h2 {
   font-family: 'Press Start 2P', cursive;
-  font-size: 18px;
+  font-size: 20px;
   text-align:center;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 .about-box p {
-  line-height:1.6;
+  line-height:1.8;
   color:#4f5f52;
-  font-size:14px;
+  font-size:16px;
 }
 </style>
 </head>
