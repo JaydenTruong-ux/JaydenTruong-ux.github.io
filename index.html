@@ -8,14 +8,15 @@
 
 <style>
 
-/* LOFI COLOR VARIABLES */
+/* MUTED LOFI PURPLE PALETTE */
 
 :root{
---lofi1:#674ab3;
---lofi2:#a348a6;
---lofi3:#9f63c4;
---lofi4:#9075d8;
---lofi5:#cea2d7;
+--lofi1:#8e7ccf;
+--lofi2:#a48cd9;
+--lofi3:#b79de1;
+--lofi4:#c9b3ea;
+--lofi5:#ddd0f1;
+--textDark:#4e4376;
 }
 
 /* BODY */
@@ -26,26 +27,25 @@ font-family:'Comfortaa', cursive;
 
 background: linear-gradient(
 135deg,
-var(--lofi1),
-var(--lofi2),
-var(--lofi3),
+var(--lofi5),
 var(--lofi4),
-var(--lofi5)
+var(--lofi3),
+var(--lofi2)
 );
 
 background-size:400% 400%;
-animation: lofiGradient 18s ease infinite;
+animation:gradientMove 20s ease infinite;
 
 display:flex;
 flex-direction:column;
 align-items:center;
 min-height:100vh;
-padding-bottom:80px;
+padding-bottom:100px;
 }
 
-/* SMOOTH GRADIENT ANIMATION */
+/* ANIMATED LOFI GRADIENT */
 
-@keyframes lofiGradient{
+@keyframes gradientMove{
 0%{background-position:0% 50%;}
 50%{background-position:100% 50%;}
 100%{background-position:0% 50%;}
@@ -54,31 +54,48 @@ padding-bottom:80px;
 /* NAVBAR */
 
 nav{
-background: linear-gradient(90deg,var(--lofi2),var(--lofi4));
+
 width:100%;
-padding:30px 0;
+
+background: linear-gradient(
+90deg,
+var(--lofi3),
+var(--lofi2),
+var(--lofi3)
+);
+
+padding:35px 0;
+
 display:flex;
 justify-content:center;
-gap:60px;
+gap:70px;
+
+box-shadow:0 4px 12px rgba(0,0,0,0.15);
 }
 
 nav a{
 font-family:'Press Start 2P', cursive;
 text-decoration:none;
+
 color:white;
+
 border:2px solid white;
+
 padding:12px 18px;
+
 border-radius:8px;
+
 transition:all 0.25s ease;
+
 position:relative;
 }
 
 nav a:hover{
 background:var(--lofi5);
-color:var(--lofi1);
+color:var(--textDark);
 }
 
-/* external arrow hover */
+/* external link arrow */
 
 nav a::after{
 content:"↗";
@@ -93,12 +110,19 @@ display:inline;
 /* NAME */
 
 #name{
+
 font-family:'Press Start 2P', cursive;
+
 font-size:90px;
+
 color:white;
+
 text-align:center;
-line-height:1.6;
-margin-top:90px;
+
+margin-top:100px;
+
+line-height:1.5;
+
 }
 
 /* typing cursor */
@@ -117,22 +141,35 @@ animation:blink 1s infinite;
 /* incoming role */
 
 #incoming{
+
 font-family:'Press Start 2P', cursive;
+
 font-size:22px;
+
+margin-top:35px;
+
 color:white;
-margin-top:30px;
+
 }
 
 /* EXPERIENCE SECTION */
 
 .experiences{
+
 display:flex;
+
 flex-wrap:wrap;
+
 justify-content:center;
-gap:60px;
-margin-top:100px;
+
+gap:70px;
+
+margin-top:110px;
+
 width:100%;
+
 max-width:1200px;
+
 }
 
 /* EXPERIENCE CARD */
@@ -140,27 +177,30 @@ max-width:1200px;
 .experience-card{
 
 width:300px;
-padding:30px;
 
-border-radius:12px;
+padding:32px;
+
+border-radius:14px;
 
 background: linear-gradient(
 145deg,
 var(--lofi5),
-var(--lofi3)
+var(--lofi4)
 );
 
 text-align:center;
+
 cursor:pointer;
 
-box-shadow:0px 8px 20px rgba(0,0,0,0.25);
+box-shadow:0 10px 22px rgba(0,0,0,0.18);
 
 transition:all 0.3s ease;
 
 font-family:'Press Start 2P', cursive;
+
 }
 
-/* hover effect */
+/* hover */
 
 .experience-card:hover{
 
@@ -169,12 +209,12 @@ transform:translateY(-8px);
 background: linear-gradient(
 145deg,
 var(--lofi4),
-var(--lofi2)
+var(--lofi3)
 );
 
 }
 
-/* logos */
+/* logo */
 
 .experience-card img{
 width:120px;
@@ -183,96 +223,125 @@ object-fit:contain;
 margin-bottom:20px;
 }
 
+/* card title */
+
 .experience-card h3{
 margin:10px 0;
 font-size:18px;
-color:white;
+color:var(--textDark);
 }
 
-/* stat bars */
+/* stats */
 
 .stats-box{
-margin-top:15px;
+margin-top:18px;
 text-align:left;
-padding:5px;
 }
 
 .stat{
-margin:12px 0;
+margin:14px 0;
 font-size:12px;
-color:white;
+color:var(--textDark);
 }
 
+/* stat bar */
+
 .bar{
-background:#ffffff30;
-border:2px solid var(--lofi1);
+background:#ffffff70;
+
+border:2px solid var(--lofi3);
+
 border-radius:6px;
+
 width:100%;
 height:16px;
-margin-top:4px;
+
+margin-top:5px;
 }
 
 .progress{
+
 height:100%;
 width:0%;
 
 background: linear-gradient(
 90deg,
-var(--lofi1),
 var(--lofi2),
-var(--lofi5)
+var(--lofi3),
+var(--lofi4)
 );
 
-transition:width 1s ease-in-out;
+transition:width 1s ease;
 }
 
 /* coming soon */
 
 .coming-soon{
+
 font-size:16px;
+
 font-style:italic;
+
 margin-top:15px;
-color:white;
+
+color:var(--textDark);
+
 }
 
 /* ABOUT ME */
 
 .about-me{
 
-margin-top:120px;
+margin-top:130px;
 
 background: linear-gradient(
 145deg,
 var(--lofi5),
-var(--lofi3)
+var(--lofi4)
 );
 
-padding:40px 50px;
+padding:45px 60px;
 
-border:2px solid var(--lofi1);
+border-radius:14px;
 
-border-radius:12px;
+border:2px solid var(--lofi3);
 
 max-width:950px;
 
-box-shadow:0px 8px 20px rgba(0,0,0,0.25);
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
 
 }
+
+/* about header */
 
 .about-me h2{
+
 font-family:'Press Start 2P', cursive;
+
 text-align:center;
+
 font-size:26px;
+
 margin-bottom:30px;
-color:white;
+
+color:var(--textDark);
+
 }
 
+/* about text */
+
 .about-me p{
+
 font-family:'Comfortaa', cursive;
+
 font-size:19px;
+
 line-height:1.9;
+
 margin:0;
-color:white;
+
+color:var(--textDark);
+
 }
 
 </style>
@@ -280,21 +349,15 @@ color:white;
 
 <body>
 
-<!-- NAVBAR -->
-
 <nav>
 <a href="index.html">HOME</a>
 <a href="JaydenTruong_Resume.pdf" target="_blank">RESUME</a>
 <a href="contact.html">CONTACT</a>
 </nav>
 
-<!-- NAME -->
-
 <h1 id="name"><span id="text"></span><span class="cursor"></span></h1>
 
 <p id="incoming">Incoming @ Sephora...</p>
-
-<!-- EXPERIENCE -->
 
 <div class="experiences">
 
@@ -348,18 +411,16 @@ color:white;
 
 </div>
 
-<!-- ABOUT ME -->
-
 <div class="about-me">
 
 <h2>ABOUT ME</h2>
 
 <p>
-Hello! I am Jayden, a Legal Studies student with a minor in Human Resource Management from the University of Waterloo. 
+Hello! I am Jayden, a Legal Studies student with a minor in Human Resource Management from the University of Waterloo.
 
-I am currently in my third year of my undergraduate degree and through my internships and coursework, I have gained hands-on experience in business development, marketing, and project coordination. 
+I am currently in my third year of my undergraduate degree and through my internships and coursework, I have gained hands-on experience in business development, marketing, and project coordination.
 
-Alongside a strong foundation in legal research, critical thinking, and policy analysis, my interest in law has helped me see how law connects to business and society. 
+Alongside a strong foundation in legal research, critical thinking, and policy analysis, my interest in law has helped me see how law connects to business and society.
 
 I look forward to applying what I learn to practical settings where I can collaborate, problem solve, and contribute to meaningful projects. Let's connect!
 </p>
@@ -383,14 +444,15 @@ setTimeout(typeWriter,120);
 }
 }
 
-/* stat animation */
-
 window.onload=()=>{
+
 typeWriter();
 
-document.querySelectorAll('.progress').forEach((bar)=>{
+/* animate stat bars */
+
+document.querySelectorAll('.progress').forEach(bar=>{
 const width=bar.style.width;
-bar.style.width='0%';
+bar.style.width="0%";
 
 setTimeout(()=>{
 bar.style.width=width;
