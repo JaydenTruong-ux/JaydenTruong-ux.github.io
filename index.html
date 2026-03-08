@@ -2,28 +2,27 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Jayden Truong Portfolio</title>
+<title>Jayden Truong</title>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
 <style>
 /* --- Body & Theme --- */
-body {
-  margin: 0;
-  font-family: 'Comfortaa', cursive;
+body{
+  margin:0;
+  font-family:'Press Start 2P', cursive;
   background: linear-gradient(135deg,#F2E4E7,#B7C9B6);
-  display: flex;
+  display:flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
-  padding-bottom: 50px;
+  min-height:100vh;
 }
 
 /* --- Navigation Bar --- */
 nav {
   background: #B7C9B6;
-  width: 100%;
+  width:100%;
   padding: 20px 0;
 }
 
@@ -39,7 +38,6 @@ nav ul {
 nav ul li a {
   text-decoration: none;
   color: #4f5f52;
-  font-weight: bold;
   transition: color 0.2s;
 }
 
@@ -47,70 +45,68 @@ nav ul li a:hover {
   color: #F2E4E7;
 }
 
-/* --- Intro Name Animation --- */
-#name {
-  font-family:'Press Start 2P', cursive;
+/* --- Name Typing Animation --- */
+#name{
   font-size: 40px;
-  color: #4f5f52;
-  text-align: center;
+  color:#4f5f52;
+  text-align:center;
+  line-height:1.6;
   margin-top: 50px;
-  line-height: 1.6;
 }
 
-.cursor {
-  border-right: 4px solid #4f5f52;
-  animation: blink 1s infinite;
+.cursor{
+  border-right:4px solid #4f5f52;
+  animation:blink 1s infinite;
 }
 
-@keyframes blink {
-  0% { border-color: transparent; }
-  50% { border-color: #4f5f52; }
-  100% { border-color: transparent; }
+@keyframes blink{
+  0%{border-color:transparent}
+  50%{border-color:#4f5f52}
+  100%{border-color:transparent}
 }
 
 /* --- Experience Cards --- */
-.cards-container {
+.experiences {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 40px;
+  gap: 30px;
   margin-top: 50px;
+  padding-bottom: 50px;
 }
 
 .experience-card {
-  background: #E3F0E1;
   width: 250px;
-  border-radius: 15px;
   padding: 20px;
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  background: #F2E4E7;
   text-align: center;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s, background 0.2s;
 }
 
 .experience-card:hover {
   transform: translateY(-5px);
-  box-shadow: 4px 4px 15px rgba(0,0,0,0.2);
+  background: #B7C9B6;
 }
 
-.card-logo {
+.experience-card img {
   width: 100px;
   height: 100px;
   object-fit: contain;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  border: 1px solid #4f5f52;
+  margin-bottom: 15px;
 }
 
 .experience-card h3 {
-  margin: 10px 0 5px 0;
-  color: #4f5f52;
+  margin: 5px 0;
+  color:#4f5f52;
 }
 
 .experience-card p {
-  color: #4f5f52;
-  font-style: italic;
   margin: 0;
+  color:#4f5f52;
+  font-size: 12px;
 }
 </style>
 </head>
@@ -125,44 +121,52 @@ nav ul li a:hover {
   </ul>
 </nav>
 
-<!-- Intro Name Animation -->
-<h1 id="name"><span id="text"></span><span class="cursor"></span></h1>
+<!-- Name Typing Animation -->
+<h1 id="name">
+  <span id="text"></span><span class="cursor"></span>
+</h1>
+
+<!-- Typing Sound (optional) -->
+<audio id="typeSound" src="typing.mp3" preload="auto"></audio>
 
 <!-- Experience Cards -->
-<div class="cards-container">
-  <!-- Example Card: Digital Extremes -->
-  <div class="experience-card" onclick="location.href='experience-digitalextremes.html'">
-    <img src="digitalextremes-logo.png" alt="Digital Extremes Logo" class="card-logo">
-    <h3>Digital Extremes</h3>
-    <p>Partner Marketing Coordinator</p>
+<div class="experiences">
+  <div class="experience-card" onclick="location.href='experience1.html'">
+    <img src="company1logo.png" alt="Company 1 Logo" />
+    <h3>Company 1</h3>
+    <p>Software Intern</p>
   </div>
-
-  <!-- Add more company cards here, e.g., another company -->
-  <!--
-  <div class="experience-card" onclick="location.href='experience-anothercompany.html'">
-    <img src="another-logo.png" alt="Another Company Logo" class="card-logo">
-    <h3>Another Company</h3>
-    <p>Role Title</p>
+  <div class="experience-card" onclick="location.href='experience2.html'">
+    <img src="company2logo.png" alt="Company 2 Logo" />
+    <h3>Company 2</h3>
+    <p>Research Assistant</p>
   </div>
-  -->
+  <div class="experience-card" onclick="location.href='experience3.html'">
+    <img src="company3logo.png" alt="Company 3 Logo" />
+    <h3>Company 3</h3>
+    <p>Project Coordinator</p>
+  </div>
 </div>
 
-<!-- Typing Sound & Script -->
-<audio id="typeSound" src="typing.mp3"></audio>
 <script>
+/* --- Typing Animation --- */
 const name = "Jayden Truong";
 const text = document.getElementById("text");
+const sound = document.getElementById("typeSound");
 let i = 0;
+const typingSpeed = 120;
 
+// Auto-start typing animation
 function typeWriter(){
-  if(i < name.length){
-    text.textContent += name.charAt(i);
-    i++;
-    setTimeout(typeWriter,120);
-  }
+    if(i < name.length){
+        text.textContent += name.charAt(i);
+        i++;
+        setTimeout(typeWriter, typingSpeed);
+    }
 }
-
-window.onload = typeWriter;
+window.onload = () => {
+    typeWriter();
+};
 </script>
 
 </body>
