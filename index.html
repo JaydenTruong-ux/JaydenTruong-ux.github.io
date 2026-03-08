@@ -262,7 +262,7 @@ nav a:hover{
   align-items:center;
 }
 
-/* Pixel art icon for each skill */
+/* Pixel art icon for each skill with unique mini art */
 .mastery-list ul li::before{
   content:'';
   display:inline-block;
@@ -270,10 +270,56 @@ nav a:hover{
   height:12px;
   margin-right:8px;
   background-color:var(--softViolet);
+}
+
+/* Individual skill pixel patterns using box-shadow */
+.mastery-list ul li.github::before{
   box-shadow:
     2px 0 var(--mutedPurple),
-    0 2px var(--dustyLilac),
-    2px 2px var(--lavender);
+    0 2 var(--dustyLilac),
+    2 2 var(--lavender),
+    4 0 var(--textDark),
+    0 4 var(--textDark);
+}
+
+.mastery-list ul li.marketing::before{
+  box-shadow:
+    2px 0 var(--textDark),
+    0 2 var(--softViolet),
+    2 2 var(--mutedPurple),
+    4 0 var(--dustyLilac);
+}
+
+.mastery-list ul li.jira::before{
+  box-shadow:
+    2px 0 var(--dustyLilac),
+    0 2 var(--lavender),
+    2 2 var(--mutedPurple),
+    4 0 var(--softViolet);
+}
+
+.mastery-list ul li.partner::before{
+  box-shadow:
+    2px 0 var(--mutedPurple),
+    0 2 var(--lavender),
+    2 2 var(--dustyLilac),
+    4 0 var(--textDark);
+}
+
+.mastery-list ul li.shopify::before{
+  box-shadow:
+    2px 0 var(--softViolet),
+    0 2 var(--dustyLilac),
+    2 2 var(--lavender),
+    4 0 var(--textDark);
+}
+
+.mastery-list ul li.hubspot::before{
+  box-shadow:
+    2px 0 var(--textDark),
+    0 2 var(--mutedPurple),
+    2 2 var(--softViolet),
+    4 0 var(--dustyLilac);
 }
 
 /* FLOATING PIXEL STARS */
@@ -407,12 +453,12 @@ nav a:hover{
   <div class="mastery-list">
     <h2>MASTERY</h2>
     <ul>
-      <li>GitHub</li>
-      <li>Digital Marketing</li>
-      <li>Jira</li>
-      <li>Partner Marketing</li>
-      <li>Shopify</li>
-      <li>HubSpot</li>
+      <li class="github">GitHub</li>
+      <li class="marketing">Digital Marketing</li>
+      <li class="jira">Jira</li>
+      <li class="partner">Partner Marketing</li>
+      <li class="shopify">Shopify</li>
+      <li class="hubspot">HubSpot</li>
     </ul>
   </div>
 </div>
