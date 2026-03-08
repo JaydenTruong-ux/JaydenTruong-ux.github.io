@@ -3,6 +3,7 @@
 
 <head>
 <meta charset="UTF-8">
+
 <title>Jayden Truong</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
@@ -10,76 +11,68 @@
 <style>
 
 body{
-    margin:0;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
 
-    /* muted strawberry matcha gradient */
-    background: linear-gradient(135deg,#F2E4E7,#B7C9B6);
+/* muted strawberry matcha gradient */
+background: linear-gradient(135deg,#F2E4E7,#B7C9B6);
 
-    font-family:'Hachi Maru Pop', cursive;
-}
-
-#container{
-    text-align:center;
+font-family:'Hachi Maru Pop', cursive;
 }
 
 #name{
-    font-size:70px;
-    color:#5A5A5A;
-    letter-spacing:2px;
+font-size:80px;
+color:#4f5f52;
+letter-spacing:3px;
 }
 
 .cursor{
-    border-right:3px solid #5A5A5A;
-    animation: blink 1s infinite;
+border-right:4px solid #4f5f52;
+animation:blink 1s infinite;
 }
 
 @keyframes blink{
-    0%{border-color:transparent}
-    50%{border-color:#5A5A5A}
-    100%{border-color:transparent}
+0%{border-color:transparent}
+50%{border-color:#4f5f52}
+100%{border-color:transparent}
 }
 
 </style>
+
 </head>
 
-
 <body>
-
-<div id="container">
 
 <h1 id="name">
 <span id="text"></span><span class="cursor"></span>
 </h1>
-
-</div>
 
 <audio id="typeSound" src="typing.mp3"></audio>
 
 <script>
 
 const name = "Jayden Truong";
-const textElement = document.getElementById("text");
+const text = document.getElementById("text");
 const sound = document.getElementById("typeSound");
 
 let i = 0;
 
 function typeWriter(){
 
-    if(i < name.length){
+if(i < name.length){
 
-        textElement.textContent += name.charAt(i);
+text.textContent += name.charAt(i);
 
-        sound.currentTime = 0;
-        sound.play();
+sound.currentTime = 0;
+sound.play();
 
-        i++;
+i++;
 
-        setTimeout(typeWriter,120);
-    }
+setTimeout(typeWriter,120);
+}
 
 }
 
@@ -88,4 +81,5 @@ window.onload = typeWriter;
 </script>
 
 </body>
+
 </html>
