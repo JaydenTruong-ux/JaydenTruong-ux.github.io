@@ -17,7 +17,7 @@ body{
   flex-direction: column;
   align-items: center;
   min-height:100vh;
-  padding-bottom: 50px; /* extra bottom space */
+  padding-bottom: 50px;
 }
 
 /* --- Navigation Bar --- */
@@ -25,7 +25,7 @@ nav {
   background: #B7C9B6;
   width:100%;
   padding: 20px 0;
-  margin-bottom: 40px; /* space below nav */
+  margin-bottom: 40px;
 }
 
 nav ul {
@@ -41,27 +41,34 @@ nav ul li a {
   text-decoration: none;
   color: #4f5f52;
   transition: color 0.2s;
+  position: relative;
 }
 
 nav ul li a:hover {
   color: #F2E4E7;
 }
 
+/* Add symbol on hover for Resume link */
+nav ul li a.resume-link:hover::after {
+  content: " 🔗";
+  position: relative;
+}
+
 /* --- Name Typing Animation --- */
 #name{
-  font-size: 50px; /* bigger name */
+  font-size: 50px;
   color:#4f5f52;
   text-align:center;
   line-height:1.8;
-  margin-top: 80px; /* more space above */
-  margin-bottom: 10px; /* space below name */
+  margin-top: 80px;
+  margin-bottom: 10px;
 }
 
 #incoming {
-  font-style: italic;
+  font-style: normal;
   color:#4f5f52;
-  margin-bottom: 40px; /* space below incoming line */
-  font-family: 'Comfortaa', cursive;
+  margin-bottom: 40px;
+  font-family: 'Press Start 2P', cursive; /* Changed font */
   font-size: 18px;
 }
 
@@ -81,19 +88,19 @@ nav ul li a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 50px; /* more space between cards */
+  gap: 50px;
   margin-top: 50px;
-  padding-bottom: 60px; /* space below experiences */
+  padding-bottom: 60px;
 }
 
 .experience-card {
   width: 250px;
-  padding: 30px; /* bigger card padding */
+  padding: 30px;
   border-radius: 10px;
   background: #F2E4E7;
   text-align: center;
   cursor: pointer;
-  box-shadow: 0px 6px 12px rgba(0,0,0,0.1); /* slightly larger shadow */
+  box-shadow: 0px 6px 12px rgba(0,0,0,0.1);
   transition: transform 0.2s, background 0.2s;
 }
 
@@ -106,11 +113,11 @@ nav ul li a:hover {
   width: 100px;
   height: 100px;
   object-fit: contain;
-  margin-bottom: 20px; /* more spacing below logo */
+  margin-bottom: 20px;
 }
 
 .experience-card h3 {
-  margin: 10px 0; /* more spacing below title */
+  margin: 10px 0;
   color:#4f5f52;
 }
 
@@ -119,8 +126,8 @@ nav ul li a:hover {
   max-width: 800px;
   background: #F2E4E7;
   border-radius: 10px;
-  padding: 40px; /* more padding inside */
-  margin: 60px auto 80px auto; /* top and bottom margin increased */
+  padding: 40px;
+  margin: 60px auto 80px auto;
   text-align: left;
   font-family: 'Comfortaa', cursive;
   box-shadow: 0px 6px 12px rgba(0,0,0,0.1);
@@ -128,16 +135,16 @@ nav ul li a:hover {
 
 .about-me-card h2 {
   color: #4f5f52;
-  margin-bottom: 30px; /* more spacing below header */
+  margin-bottom: 30px;
   text-align: center;
-  font-family: 'Comfortaa', cursive;
-  font-size: 28px; /* slightly bigger header */
+  font-family: 'Press Start 2P', cursive; /* Header in Press Start 2P */
+  font-size: 28px;
 }
 
 .about-me-card p {
   color: #4f5f52;
-  line-height: 2; /* more spacing between lines */
-  font-size: 18px; /* slightly bigger text */
+  line-height: 2;
+  font-size: 18px;
   font-family: 'Comfortaa', cursive;
 }
 </style>
@@ -148,7 +155,7 @@ nav ul li a:hover {
 <nav>
   <ul>
     <li><a href="index.html">Home</a></li>
-    <li><a href="JaydenTruong_Resume.pdf" target="_blank">Resume</a></li>
+    <li><a href="JaydenTruong_Resume.pdf" target="_blank" class="resume-link">Resume</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
@@ -177,7 +184,7 @@ nav ul li a:hover {
   </div>
 </div>
 
-<!-- About Me Section (Below Experience Cards) -->
+<!-- About Me Section -->
 <div class="about-me-card">
   <h2>About Me</h2>
   <p>Hello! I am Jayden, a Legal Studies student with a minor in Human Resource Management from the University of Waterloo. I am currently in my third year of my undergraduate degree and through my internships and coursework, I have gained hands-on experience in business development, marketing, and project coordination. Alongside a strong foundation in legal research, critical thinking, and policy analysis, my interest in law has helped me see how law connects to business and society. I look forward to applying what I learn to practical settings where I can collaborate, problem solve, and contribute to meaningful projects. Let's connect!</p>
