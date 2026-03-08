@@ -2,194 +2,182 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Henson Shaving Experience</title>
+<title>Henson Shaving - Jayden Truong</title>
 
-<!-- Google Font Comfortaa -->
-<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-/* --- Body & Theme --- */
 body {
   margin:0;
-  font-family: 'Comfortaa', cursive;
+  font-family:'Comfortaa', cursive;
   background: linear-gradient(135deg,#F2E4E7,#B7C9B6);
   display:flex;
   flex-direction: column;
   align-items: center;
   min-height:100vh;
-  padding-bottom: 50px;
+  padding-bottom:70px;
 }
 
-/* --- Navigation Bar --- */
+/* Navigation Bar */
 nav {
-  background: #B7C9B6;
+  background:#B7C9B6;
   width:100%;
-  padding: 20px 0;
+  padding:25px 0;
+  display:flex;
+  justify-content:center;
+  gap:50px;
 }
 
-nav ul {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #4f5f52;
-  font-weight: bold;
-  transition: color 0.2s;
-}
-
-nav ul li a:hover {
-  color: #F2E4E7;
-}
-
-/* --- Page Header --- */
-h1 {
-  text-align: center;
-  color: #4f5f52;
-  margin: 40px auto 20px auto;
-  font-size: 36px;
-  line-height: 1.4;
-}
-
-p.employment-dates {
-  text-align: center;
-  font-style: italic;
-  color: #4f5f52;
-  margin-bottom: 40px;
-  font-size: 18px;
-}
-
-/* --- Company Logo Box --- */
-.logo-box {
-  background: #E3F0E1;
-  border-radius: 15px;
-  padding: 10px;
-  border: 2px solid #4f5f52;
-  width: 200px;
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 60px 0 30px 0;
-}
-
-img.company-logo {
-  width: 180px;
-  height: 180px;
-  object-fit: contain;
-}
-
-/* --- Company Website Link --- */
-a.company-link {
+nav a {
+  font-family:'Press Start 2P', cursive;
+  text-decoration:none;
   color:#4f5f52;
-  text-decoration: underline;
-  font-weight: bold;
-  text-align: center;
-  display: block;
-  margin-bottom: 50px;
-  font-size: 18px;
+  border:2px solid #4f5f52;
+  padding:10px 16px;
+  border-radius:6px;
+  transition: all 0.2s;
 }
 
-/* --- Two-column content --- */
-.content-container {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 1000px;
-  gap: 50px;
-  padding: 0 20px;
-  margin-bottom: 50px;
+nav a:hover {
+  background:#4f5f52;
+  color:#F2E4E7;
 }
 
-.left-column {
-  flex: 2;
-  min-width: 320px;
+nav a::after {
+  content:"↗"; 
+  display:none;
+  margin-left:5px;
 }
 
-.right-column {
-  flex: 1;
-  min-width: 280px;
-  background: #E3F0E1; 
-  border-radius: 15px;
-  padding: 20px;           
-  box-shadow: 2px 2px 12px rgba(0,0,0,0.15);
-  max-height: fit-content;  
+nav a:hover::after {
+  display:inline;
 }
 
-.left-column ul, .right-column ul {
-  padding-left: 20px;
-  margin-top: 10px;
-  line-height: 1.8; 
-  font-size: 17px;
+/* Mission Card */
+.mission-card {
+  background:#F2E4E7;
+  border:2px solid #4f5f52;
+  border-radius:12px;
+  max-width:900px;
+  width:90%;
+  margin-top:50px;
+  padding:30px;
+  box-shadow:0px 6px 12px rgba(0,0,0,0.15);
 }
 
-h2 {
-  color: #4f5f52;
-  margin-bottom: 20px;
-  font-size: 22px;
+.mission-card img {
+  width:150px;
+  height:150px;
+  object-fit:contain;
+  display:block;
+  margin:0 auto 20px auto;
 }
 
-.right-column h2 {
-  text-align: center;
-  margin-bottom: 25px;
-  font-size: 24px;
+.mission-card h1 {
+  font-family:'Press Start 2P', cursive;
+  text-align:center;
+  color:#4f5f52;
+  margin-bottom:10px;
+  font-size:32px;
+}
+
+.mission-card h2 {
+  font-family:'Press Start 2P', cursive;
+  color:#4f5f52;
+  margin-top:30px;
+  margin-bottom:10px;
+  font-size:22px;
+}
+
+.mission-card p {
+  font-family:'Comfortaa', cursive;
+  font-size:18px;
+  line-height:1.8;
+  margin:5px 0;
+}
+
+.stats-box {
+  margin-top:20px;
+}
+
+.stat {
+  margin:12px 0;
+  font-size:14px;
+}
+
+.bar {
+  background:#E4E4E4;
+  border:2px solid #4f5f52;
+  border-radius:6px;
+  width:100%;
+  height:18px;
+  margin-top:4px;
+}
+
+.progress {
+  background:#4f5f52;
+  height:100%;
+  width:0%;
+  transition: width 1s ease-in-out;
 }
 </style>
 </head>
 <body>
 
-<!-- Navigation Bar -->
+<!-- Navigation -->
 <nav>
-  <ul>
-    <li><a href="../index.html">Home</a></li>
-    <li><a href="../resume.html">Resume</a></li>
-    <li><a href="../contact.html">Contact</a></li>
-  </ul>
+  <a href="index.html">HOME</a>
+  <a href="resume.html" target="_blank">RESUME</a>
+  <a href="contact.html">CONTACT</a>
 </nav>
 
-<!-- Company Logo Box -->
-<div class="logo-box">
-  <img src="hensonshaving-logo.png" alt="Henson Shaving Logo" class="company-logo">
-</div>
+<!-- Mission Card: Henson Shaving -->
+<div class="mission-card">
+  <img src="hensonshaving-logo.png" alt="Henson Shaving Logo">
+  <h1>MISSION: Henson Shaving</h1>
+  <p>ROLE: Business Development Coordinator</p>
+  <p>STATUS: COMPLETED</p>
+  <p>DURATION: Jan 2025 – Apr 2025</p>
 
-<!-- Job Title and Dates -->
-<h1>Business Development Coordinator @ Henson Shaving</h1>
-<p class="employment-dates">Jan 2025 – Apr 2025</p>
+  <h2>OBJECTIVES:</h2>
+  <ul>
+    <li>Conducted cold calls and led Zoom meetings to generate new leads</li>
+    <li>Managed price discussions and delivered product presentations and demos</li>
+    <li>Used HubSpot and Shopify to streamline B2B communication</li>
+    <li>Managed cross-team workflows to achieve project objectives</li>
+  </ul>
 
-<!-- Company Website Link -->
-<a href="https://hensonshaving.com/?pb=0&srsltid=AfmBOooPBAqjkwc4skBwT3hCSJAIXWdFEireFFX5PWF7QmK2C4KAmInZ" target="_blank" class="company-link">
-  Visit Henson Shaving Website
-</a>
-
-<!-- Two-column content -->
-<div class="content-container">
-  <!-- What I Did -->
-  <div class="left-column">
-    <h2>What I Did:</h2>
-    <ul>
-      <li>Conducted cold calls and led Zoom meetings to generate new leads and build strong client relationships</li>
-      <li>Managed price discussions and delivered product presentations and demos that supported client decisions and increased sales opportunities</li>
-      <li>Used HubSpot and Shopify to support B2B communication and streamline lead management</li>
-      <li>Managed cross-team workflows to work towards a common objective and streamline product delivery</li>
-    </ul>
-  </div>
-
-  <!-- Skills Learned -->
-  <div class="right-column">
-    <h2>Skills Learned</h2>
-    <ul>
-      <li>Sales & lead generation</li>
-      <li>Client relationship management</li>
-      <li>Presentation & communication skills</li>
-      <li>Workflow coordination</li>
-      <li>HubSpot & Shopify proficiency</li>
-    </ul>
+  <h2>SKILLS UNLOCKED:</h2>
+  <div class="stats-box">
+    <div class="stat">Communication
+      <div class="bar"><div class="progress" style="width:100%;"></div></div>
+    </div>
+    <div class="stat">Sales Strategy
+      <div class="bar"><div class="progress" style="width:100%;"></div></div>
+    </div>
+    <div class="stat">Teamwork
+      <div class="bar"><div class="progress" style="width:100%;"></div></div>
+    </div>
+    <div class="stat">CRM & Tools
+      <div class="bar"><div class="progress" style="width:100%;"></div></div>
+    </div>
+    <div class="stat">Project Management
+      <div class="bar"><div class="progress" style="width:100%;"></div></div>
+    </div>
   </div>
 </div>
+
+<script>
+window.onload = () => {
+  // Animate stats
+  document.querySelectorAll('.progress').forEach((bar) => {
+    const width = bar.style.width;
+    bar.style.width = '0%';
+    setTimeout(() => { bar.style.width = width; }, 200);
+  });
+};
+</script>
 
 </body>
 </html>
