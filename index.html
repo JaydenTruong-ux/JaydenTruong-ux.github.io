@@ -3,72 +3,171 @@
 <head>
 <meta charset="UTF-8">
 <title>Jayden Truong</title>
+
+<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
 <style>
+/* --- Body & Theme --- */
 body{
   margin:0;
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background: linear-gradient(135deg,#F2E4E7,#B7C9B6);
   font-family:'Press Start 2P', cursive;
+  background: linear-gradient(135deg,#F2E4E7,#B7C9B6);
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  min-height:100vh;
 }
+
+/* --- Navigation Bar --- */
+nav {
+  background: #B7C9B6;
+  width:100%;
+  padding: 20px 0;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #4f5f52;
+  transition: color 0.2s;
+}
+
+nav ul li a:hover {
+  color: #F2E4E7;
+}
+
+/* --- Name Typing Animation --- */
 #name{
-  font-size:40px;
+  font-size: 40px;
   color:#4f5f52;
   text-align:center;
   line-height:1.6;
+  margin-top: 50px;
 }
+
 .cursor{
   border-right:4px solid #4f5f52;
   animation:blink 1s infinite;
 }
+
 @keyframes blink{
   0%{border-color:transparent}
   50%{border-color:#4f5f52}
   100%{border-color:transparent}
 }
+
+/* --- Experience Cards --- */
+.experiences {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 50px;
+  padding-bottom: 50px;
+}
+
+.experience-card {
+  width: 250px;
+  padding: 20px;
+  border-radius: 10px;
+  background: #F2E4E7;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s, background 0.2s;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  background: #B7C9B6;
+}
+
+.experience-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.experience-card h3 {
+  margin: 5px 0;
+  color:#4f5f52;
+}
+
+.experience-card p {
+  margin: 0;
+  color:#4f5f52;
+  font-size: 12px;
+}
 </style>
 </head>
 <body>
+
+<!-- Navigation Bar -->
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Name Typing Animation -->
 <h1 id="name">
   <span id="text"></span><span class="cursor"></span>
 </h1>
 
+<!-- Typing Sound (optional) -->
 <audio id="typeSound" src="typing.mp3" preload="auto"></audio>
 
+<!-- Experience Cards -->
+<div class="experiences">
+  <div class="experience-card" onclick="location.href='experience1.html'">
+    <img src="company1logo.png" alt="Company 1 Logo" />
+    <h3>Company 1</h3>
+    <p>Software Intern</p>
+  </div>
+  <div class="experience-card" onclick="location.href='experience2.html'">
+    <img src="company2logo.png" alt="Company 2 Logo" />
+    <h3>Company 2</h3>
+    <p>Research Assistant</p>
+  </div>
+  <div class="experience-card" onclick="location.href='experience3.html'">
+    <img src="company3logo.png" alt="Company 3 Logo" />
+    <h3>Company 3</h3>
+    <p>Project Coordinator</p>
+  </div>
+</div>
+
 <script>
+/* --- Typing Animation --- */
 const name = "Jayden Truong";
 const text = document.getElementById("text");
 const sound = document.getElementById("typeSound");
 let i = 0;
+const typingSpeed = 120;
 
-// Calculate total duration for typing animation
-const typingSpeed = 120; // ms per letter
-const totalDuration = name.length * typingSpeed;
-
-// Start typing and sound automatically
-window.onload = () => {
-    // Play the sound once
-    sound.play();
-
-    // Stop the sound exactly when typing finishes
-    setTimeout(() => {
-        sound.pause();
-        sound.currentTime = 0;
-    }, totalDuration);
-
-    // Type out the letters
-    function typeWriter(){
-        if(i < name.length){
-            text.textContent += name.charAt(i);
-            i++;
-            setTimeout(typeWriter, typingSpeed);
-        }
+// Auto-start typing animation
+function typeWriter(){
+    if(i < name.length){
+        text.textContent += name.charAt(i);
+        i++;
+        setTimeout(typeWriter, typingSpeed);
     }
+}
+window.onload = () => {
     typeWriter();
 };
 </script>
+
 </body>
 </html>
