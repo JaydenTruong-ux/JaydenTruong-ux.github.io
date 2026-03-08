@@ -3,11 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Digital Extremes Experience</title>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<!-- Google Font Comfortaa -->
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
+/* --- Body & Theme --- */
 body {
   margin:0;
-  font-family:'Press Start 2P', cursive;
+  font-family: 'Comfortaa', cursive;
   background: linear-gradient(135deg,#F2E4E7,#B7C9B6);
   display:flex;
   flex-direction: column;
@@ -15,6 +19,7 @@ body {
   min-height:100vh;
 }
 
+/* --- Navigation Bar --- */
 nav {
   background: #B7C9B6;
   width:100%;
@@ -40,13 +45,21 @@ nav ul li a:hover {
   color: #F2E4E7;
 }
 
-h1, h2, p {
+/* --- Page Header --- */
+h1 {
   text-align: center;
-  color:#4f5f52;
-  max-width: 800px;
-  margin: 20px auto;
+  color: #4f5f52;
+  margin: 20px auto 5px auto;
 }
 
+p.employment-dates {
+  text-align: center;
+  font-style: italic;
+  color: #4f5f52;
+  margin-bottom: 40px;
+}
+
+/* --- Company Logo --- */
 img.company-logo {
   width: 150px;
   height: 150px;
@@ -54,12 +67,30 @@ img.company-logo {
   margin: 20px 0;
 }
 
-ul {
-  max-width: 800px;
-  text-align: left;
-  margin: 0 auto 50px auto;
+/* --- Two-column layout --- */
+.content-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  gap: 50px;
+  padding: 0 20px 50px 20px;
+}
+
+.left-column, .right-column {
+  flex: 1;
+  min-width: 300px;
+}
+
+.left-column ul, .right-column ul {
   padding-left: 20px;
 }
+
+/* Headings */
+h2 {
+  color: #4f5f52;
+  margin-bottom: 10px;
+}
+
 </style>
 </head>
 <body>
@@ -76,27 +107,35 @@ ul {
 <!-- Company Experience -->
 <img src="digitalextremes-logo.png" alt="Digital Extremes Logo" class="company-logo">
 <h1>Partner Marketing Coordinator @ Digital Extremes</h1>
-<p><em>Sept 2025 – Dec 2025</em></p>
+<p class="employment-dates">Sept 2025 – Dec 2025</p>
 
-<h2>What I Did:</h2>
-<ul>
-  <li>Coordinated campaigns and promotions with third-party partners including Steam, Sony, Xbox, and PlayStation</li>
-  <li>Assisted in the creation and distribution of targeted marketing materials, resulting in Warframe's highest single day revenue</li>
-  <li>Helped plan and execute marketing campaigns by creating pitch decks and campaign materials aligned with brand goals</li>
-  <li>Worked with the statistics team to support strategic sales plans that drive revenue during key moments</li>
-  <li>Identified future partner opportunities that could increase awareness of Digital Extremes and its IPs</li>
-  <li>Reviewed partner marketing assets, web content, and community materials to ensure they met brand expectations and strategic goals</li>
-  <li>Worked with official partners such as Makeship and Jade City Foods on merchandising and promotional assets</li>
-</ul>
+<div class="content-container">
+  <!-- What I Did -->
+  <div class="left-column">
+    <h2>What I Did:</h2>
+    <ul>
+      <li>Coordinated campaigns and promotions with third-party partners including Steam, Sony, Xbox, and PlayStation</li>
+      <li>Assisted in the creation and distribution of targeted marketing materials, resulting in Warframe's highest single day revenue</li>
+      <li>Helped plan and execute marketing campaigns by creating pitch decks and campaign materials aligned with brand goals</li>
+      <li>Worked with the statistics team to support strategic sales plans that drive revenue during key moments</li>
+      <li>Identified future partner opportunities that could increase awareness of Digital Extremes and its IPs</li>
+      <li>Reviewed partner marketing assets, web content, and community materials to ensure they met brand expectations and strategic goals</li>
+      <li>Worked with official partners such as Makeship and Jade City Foods on merchandising and promotional assets</li>
+    </ul>
+  </div>
 
-<h2>Skills Learned:</h2>
-<ul>
-  <li>Project management</li>
-  <li>Partnership communication</li>
-  <li>Digital marketing strategy</li>
-  <li>Content coordination</li>
-  <li>Teamwork & cross-functional collaboration</li>
-</ul>
+  <!-- Skills Learned -->
+  <div class="right-column">
+    <h2>Skills Learned:</h2>
+    <ul>
+      <li>Project management</li>
+      <li>Partnership communication</li>
+      <li>Digital marketing strategy</li>
+      <li>Content coordination</li>
+      <li>Teamwork & cross-functional collaboration</li>
+    </ul>
+  </div>
+</div>
 
 </body>
 </html>
