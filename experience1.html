@@ -39,8 +39,8 @@ nav ul {
 nav ul li a {
   text-decoration: none;
   color: #4f5f52;
-  transition: color 0.2s;
   font-weight: bold;
+  transition: color 0.2s;
 }
 
 nav ul li a:hover {
@@ -51,25 +51,37 @@ nav ul li a:hover {
 h1 {
   text-align: center;
   color: #4f5f52;
-  margin: 30px auto 10px auto;
-  font-size: 32px;
+  margin: 40px auto 20px auto;
+  font-size: 36px;
+  line-height: 1.4;
 }
 
 p.employment-dates {
   text-align: center;
   font-style: italic;
   color: #4f5f52;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  font-size: 18px;
 }
 
-/* --- Company Logo --- */
-img.company-logo {
-  width: 180px;
-  height: 180px;
-  object-fit: contain;
-  margin: 30px 0;
-  border-radius: 10px;
+/* --- Company Logo Box --- */
+.logo-box {
+  background: #E3F0E1;
+  border-radius: 15px;
+  padding: 20px;
   border: 2px solid #4f5f52;
+  width: 220px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+img.company-logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 /* --- Company Website Link --- */
@@ -77,6 +89,10 @@ a.company-link {
   color:#4f5f52;
   text-decoration: underline;
   font-weight: bold;
+  text-align: center;
+  display: block;
+  margin-bottom: 50px;
+  font-size: 18px;
 }
 
 /* --- Two-column layout --- */
@@ -86,42 +102,45 @@ a.company-link {
   max-width: 1000px;
   gap: 50px;
   padding: 0 20px;
+  margin-bottom: 50px;
 }
 
 /* Left column = What I Did */
 .left-column {
   flex: 2;
-  min-width: 300px;
+  min-width: 320px;
 }
 
 /* Right column = Skills Learned box */
 .right-column {
   flex: 1;
-  min-width: 250px;
+  min-width: 280px;
   background: #E3F0E1; /* light greenish box */
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 2px 2px 12px rgba(0,0,0,0.15);
 }
 
 /* Lists inside columns */
 .left-column ul, .right-column ul {
   padding-left: 20px;
   margin-top: 10px;
+  line-height: 1.8; /* more spacing between items */
+  font-size: 17px;
 }
 
 /* Headings */
 h2 {
   color: #4f5f52;
-  margin-bottom: 15px;
-  font-size: 20px;
+  margin-bottom: 20px;
+  font-size: 22px;
 }
 
 /* Skills box heading */
 .right-column h2 {
   text-align: center;
-  margin-bottom: 20px;
-  font-size: 22px;
+  margin-bottom: 25px;
+  font-size: 24px;
 }
 </style>
 </head>
@@ -137,17 +156,17 @@ h2 {
 </nav>
 
 <!-- Company Experience -->
-<img src="digitalextremes-logo.png" alt="Digital Extremes Logo" class="company-logo">
+<div class="logo-box">
+  <img src="digitalextremes-logo.png" alt="Digital Extremes Logo" class="company-logo">
+</div>
 
 <h1>Partner Marketing Coordinator @ Digital Extremes</h1>
 <p class="employment-dates">Sept 2025 – Dec 2025</p>
 
 <!-- Company Website Link -->
-<p style="text-align:center; margin-bottom: 40px;">
-  <a href="https://www.digitalextremes.com/" target="_blank" class="company-link">
-    Visit Digital Extremes Website
-  </a>
-</p>
+<a href="https://www.digitalextremes.com/" target="_blank" class="company-link">
+  Visit Digital Extremes Website
+</a>
 
 <div class="content-container">
   <!-- What I Did -->
