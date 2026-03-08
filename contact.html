@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <title>Contact Jayden Truong</title>
 
-<!-- Google Font Comfortaa -->
-<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+<!-- Google Fonts: Press Start 2P & Comfortaa -->
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -20,7 +20,7 @@
 
 body {
   margin:0;
-  font-family:'Comfortaa', cursive;
+  font-family:'Comfortaa', cursive; /* body text */
   background: linear-gradient(135deg,#f5f2fb,#e7e1f6,#d6cdee,#c4b8e5);
   background-size:400% 400%;
   animation:gradientMove 25s ease infinite;
@@ -37,6 +37,7 @@ body {
   100%{background-position:0% 50%;}
 }
 
+/* Navigation Bar */
 nav {
   background: linear-gradient(90deg, var(--dustyLilac), var(--softViolet), var(--dustyLilac));
   width:100%;
@@ -48,7 +49,7 @@ nav {
 }
 
 nav a{
-  font-family:'Press Start 2P', cursive;
+  font-family:'Press Start 2P', cursive; /* match index page */
   text-decoration:none;
   color:white;
   border:2px solid white;
@@ -62,12 +63,15 @@ nav a:hover{
   color:var(--textDark);
 }
 
+/* Page Header */
 h1 {
+  font-family:'Press Start 2P', cursive; /* match index page */
   margin-top:50px;
   color:var(--textDark);
   text-align:center;
 }
 
+/* Intro Sentence */
 .intro {
   margin-top:20px;
   max-width:600px;
@@ -75,8 +79,10 @@ h1 {
   color:var(--textDark);
   font-size:18px;
   line-height:1.6;
+  font-family:'Comfortaa', cursive; /* body text font */
 }
 
+/* Contact Info Cards */
 .contact-container {
   display: flex;
   flex-direction: column;
@@ -88,6 +94,7 @@ h1 {
   border-radius:16px;
   border:2px solid var(--dustyLilac);
   box-shadow:0 10px 25px rgba(0,0,0,0.12);
+  font-family:'Comfortaa', cursive; /* body text font */
 }
 
 .contact-container a {
