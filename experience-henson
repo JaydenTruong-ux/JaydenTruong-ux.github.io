@@ -95,7 +95,7 @@ a.company-link {
   font-size: 18px;
 }
 
-/* --- Two-column layout --- */
+/* --- Two-column content --- */
 .content-container {
   display: flex;
   flex-wrap: wrap;
@@ -105,13 +105,11 @@ a.company-link {
   margin-bottom: 50px;
 }
 
-/* Left column = What I Did */
 .left-column {
   flex: 2;
   min-width: 320px;
 }
 
-/* Right column = Skills Learned box */
 .right-column {
   flex: 1;
   min-width: 280px;
@@ -122,7 +120,6 @@ a.company-link {
   max-height: fit-content;  
 }
 
-/* Lists inside columns */
 .left-column ul, .right-column ul {
   padding-left: 20px;
   margin-top: 10px;
@@ -130,14 +127,12 @@ a.company-link {
   font-size: 17px;
 }
 
-/* Headings */
 h2 {
   color: #4f5f52;
   margin-bottom: 20px;
   font-size: 22px;
 }
 
-/* Skills box heading */
 .right-column h2 {
   text-align: center;
   margin-bottom: 25px;
