@@ -17,6 +17,7 @@ body{
   flex-direction: column;
   align-items: center;
   min-height:100vh;
+  padding-bottom: 50px; /* extra bottom space */
 }
 
 /* --- Navigation Bar --- */
@@ -24,6 +25,7 @@ nav {
   background: #B7C9B6;
   width:100%;
   padding: 20px 0;
+  margin-bottom: 40px; /* space below nav */
 }
 
 nav ul {
@@ -47,11 +49,12 @@ nav ul li a:hover {
 
 /* --- Name Typing Animation --- */
 #name{
-  font-size: 40px;
+  font-size: 50px; /* bigger name */
   color:#4f5f52;
   text-align:center;
-  line-height:1.6;
-  margin-top: 50px;
+  line-height:1.8;
+  margin-top: 80px; /* more space above */
+  margin-bottom: 20px; /* space below name */
 }
 
 .cursor{
@@ -70,19 +73,19 @@ nav ul li a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
+  gap: 50px; /* more space between cards */
   margin-top: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 60px; /* space below experiences */
 }
 
 .experience-card {
   width: 250px;
-  padding: 20px;
+  padding: 30px; /* bigger card padding */
   border-radius: 10px;
   background: #F2E4E7;
   text-align: center;
   cursor: pointer;
-  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0px 6px 12px rgba(0,0,0,0.1); /* slightly larger shadow */
   transition: transform 0.2s, background 0.2s;
 }
 
@@ -95,11 +98,11 @@ nav ul li a:hover {
   width: 100px;
   height: 100px;
   object-fit: contain;
-  margin-bottom: 15px;
+  margin-bottom: 20px; /* more spacing below logo */
 }
 
 .experience-card h3 {
-  margin: 5px 0;
+  margin: 10px 0; /* more spacing below title */
   color:#4f5f52;
 }
 
@@ -108,25 +111,26 @@ nav ul li a:hover {
   max-width: 800px;
   background: #F2E4E7;
   border-radius: 10px;
-  padding: 30px;
-  margin: 50px auto;
+  padding: 40px; /* more padding inside */
+  margin: 60px auto 80px auto; /* top and bottom margin increased */
   text-align: left;
   font-family: 'Comfortaa', cursive;
-  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0px 6px 12px rgba(0,0,0,0.1);
 }
 
 .about-me-card h2 {
   color: #4f5f52;
-  margin-bottom: 20px;
+  margin-bottom: 30px; /* more spacing below header */
   text-align: center;
-  font-family: 'Comfortaa', cursive; /* Header now uses Comfortaa */
+  font-family: 'Comfortaa', cursive;
+  font-size: 28px; /* slightly bigger header */
 }
 
 .about-me-card p {
   color: #4f5f52;
-  line-height: 1.8;
-  font-size: 16px;
-  font-family: 'Comfortaa', cursive; /* Paragraph uses Comfortaa */
+  line-height: 2; /* more spacing between lines */
+  font-size: 18px; /* slightly bigger text */
+  font-family: 'Comfortaa', cursive;
 }
 </style>
 </head>
