@@ -242,17 +242,21 @@ nav a:hover{
 .mastery-section{
   display:flex;
   justify-content:center;
-  gap:40px;
   margin-top:60px;
   max-width:950px;
   flex-wrap:wrap;
 }
 
-.skills-grid{
+.mastery-box{
+  background: linear-gradient(145deg, var(--cardLight), var(--softLilac));
+  border:2px solid var(--dustyLilac);
+  border-radius:16px;
+  padding:25px 35px;
   display:flex;
   flex-wrap:wrap;
   gap:15px;
   justify-content:center;
+  box-shadow:0 8px 20px rgba(0,0,0,0.12);
 }
 
 .skill-box{
@@ -393,7 +397,7 @@ nav a:hover{
 
 <!-- Mastery Section -->
 <div class="mastery-section">
-  <div class="skills-grid">
+  <div class="mastery-box">
     <div class="skill-box">GitHub</div>
     <div class="skill-box">Digital Marketing</div>
     <div class="skill-box">Jira</div>
