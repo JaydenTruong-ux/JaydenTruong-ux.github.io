@@ -265,15 +265,14 @@ nav a:hover{
   border-radius:2px;
 }
 
-/* MASTERY SECTION */
+/* MASTERY SECTION - REVERTED */
 .mastery-section{
   display:flex;
   justify-content:center;
-  gap:20px;
+  gap:40px;
   margin-top:60px;
   max-width:950px;
   flex-wrap:wrap;
-  position:relative;
 }
 
 .mastery-list{
@@ -283,25 +282,26 @@ nav a:hover{
   padding:30px;
   width:300px;
   box-shadow:0 8px 20px rgba(0,0,0,0.12);
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  justify-content:center;
 }
 
-.skill-box{
-  background: var(--softLilac);
-  border:2px solid var(--dustyLilac);
-  border-radius:12px;
-  padding:10px 14px;
+.mastery-list h2{
   font-family:'Press Start 2P', cursive;
-  font-size:14px;
+  text-align:center;
+  font-size:22px;
+  margin-bottom:20px;
   color:var(--textDark);
-  transition:.3s;
 }
-.skill-box:hover {
-  transform:scale(1.05);
-  box-shadow:0 4px 12px rgba(0,0,0,0.25);
+
+.mastery-list ul{
+  list-style:none;
+  padding-left:0;
+  font-family:'Press Start 2P', cursive;
+  font-size:16px;
+  color:var(--textDark);
+}
+
+.mastery-list ul li{
+  margin:10px 0;
 }
 
 /* FLOATING PIXEL STARS */
@@ -442,12 +442,15 @@ nav a:hover{
 <!-- Mastery Section -->
 <div class="mastery-section">
   <div class="mastery-list">
-    <div class="skill-box">GitHub</div>
-    <div class="skill-box">Digital Marketing</div>
-    <div class="skill-box">Jira</div>
-    <div class="skill-box">Partner Marketing</div>
-    <div class="skill-box">Shopify</div>
-    <div class="skill-box">HubSpot</div>
+    <h2>MASTERY</h2>
+    <ul>
+      <li>GitHub</li>
+      <li>Digital Marketing</li>
+      <li>Jira</li>
+      <li>Partner Marketing</li>
+      <li>Shopify</li>
+      <li>HubSpot</li>
+    </ul>
   </div>
 </div>
 
