@@ -279,6 +279,7 @@ nav a:hover{
 .mastery-list ul li{
   display:flex;
   align-items:center;
+  flex-direction:column;
 }
 
 /* Pixel art icon for each skill with unique mini art */
@@ -287,10 +288,18 @@ nav a:hover{
   display:inline-block;
   width:12px;
   height:12px;
-  margin-right:8px;
+  margin-bottom:6px;
   background-color:var(--softViolet);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
+/* Hover animation for pixel icons */
+.mastery-list ul li:hover::before {
+  transform: scale(1.5);
+  box-shadow: 0 0 6px var(--mutedPurple), 0 0 12px var(--softViolet);
+}
+
+/* Individual skill pixel patterns using box-shadow */
 .mastery-list ul li.github::before{
   box-shadow:
     2px 0 var(--mutedPurple),
@@ -338,6 +347,24 @@ nav a:hover{
     0 2 var(--mutedPurple),
     2 2 var(--softViolet),
     4 0 var(--dustyLilac);
+}
+
+/* Mastery progress bar */
+.mastery-list ul li .skill-bar {
+  width:60px;
+  height:6px;
+  margin-top:4px;
+  background:#ffffff90;
+  border:1px solid var(--mutedPurple);
+  border-radius:3px;
+  overflow:hidden;
+}
+
+.mastery-list ul li .skill-bar .skill-progress {
+  height:100%;
+  width:0%;
+  background: linear-gradient(90deg, var(--softViolet), var(--mutedPurple), var(--dustyLilac));
+  transition: width 1s ease;
 }
 
 /* FLOATING PIXEL STARS */
@@ -474,12 +501,24 @@ nav a:hover{
   <div class="mastery-list">
     <h2>MASTERY</h2>
     <ul>
-      <li class="github">GitHub</li>
-      <li class="marketing">Digital Marketing</li>
-      <li class="jira">Jira</li>
-      <li class="partner">Partner Marketing</li>
-      <li class="shopify">Shopify</li>
-      <li class="hubspot">HubSpot</li>
+      <li class="github">GitHub
+        <div class="skill-bar"><div class="skill-progress" style="width:90%"></div></div>
+      </li>
+      <li class="marketing">Digital Marketing
+        <div class="skill-bar"><div class="skill-progress" style="width:95%"></div></div>
+      </li>
+      <li class="jira">Jira
+        <div class="skill-bar"><div class="skill-progress" style="width:85%"></div></div>
+      </li>
+      <li class="partner">Partner Marketing
+        <div class="skill-bar"><div class="skill-progress" style="width:80%"></div></div>
+      </li>
+      <li class="shopify">Shopify
+        <div class="skill-bar"><div class="skill-progress" style="width:90%"></div></div>
+      </li>
+      <li class="hubspot">HubSpot
+        <div class="skill-bar"><div class="skill-progress" style="width:85%"></div></div>
+      </li>
     </ul>
   </div>
 </div>
@@ -502,6 +541,11 @@ document.querySelectorAll('.progress').forEach(bar=>{
 const width=bar.style.width;
 bar.style.width="0%";
 setTimeout(()=>{bar.style.width=width;},200);
+});
+document.querySelectorAll('.skill-progress').forEach(bar=>{
+const width=bar.style.width;
+bar.style.width="0%";
+setTimeout(()=>{bar.style.width=width;},400);
 });
 };
 </script>
