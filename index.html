@@ -168,38 +168,6 @@ nav a:hover{
   color:var(--textDark);
 }
 
-.stats-box{
-  margin-top:18px;
-  text-align:left;
-}
-
-.stat{
-  margin:14px 0;
-  font-size:12px;
-  color:var(--textDark);
-}
-
-.bar{
-  background:#ffffff90;
-  border:2px solid var(--mutedPurple);
-  border-radius:6px;
-  width:100%;
-  height:16px;
-  margin-top:5px;
-}
-
-.progress{
-  height:100%;
-  width:0%;
-  background: linear-gradient(
-    90deg,
-    var(--softViolet),
-    var(--mutedPurple),
-    var(--dustyLilac)
-  );
-  transition:width 1s ease;
-}
-
 .coming-soon{
   font-size:16px;
   font-style:italic;
@@ -242,18 +210,22 @@ nav a:hover{
 .mastery-section{
   display:flex;
   justify-content:center;
-  gap:40px;
+  gap:20px;
   margin-top:60px;
   max-width:950px;
   flex-wrap:wrap;
 }
 
 .mastery-list{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:15px;
   background: linear-gradient(145deg, var(--cardLight), var(--softLilac));
   border:2px solid var(--dustyLilac);
   border-radius:16px;
   padding:30px;
-  width:300px;
+  width:100%;
   box-shadow:0 8px 20px rgba(0,0,0,0.12);
 }
 
@@ -263,108 +235,24 @@ nav a:hover{
   font-size:22px;
   margin-bottom:20px;
   color:var(--textDark);
+  width:100%;
 }
 
-.mastery-list ul{
-  list-style:none;
-  padding-left:0;
-  display:grid;
-  grid-template-columns:1fr 1fr; /* two per row */
-  gap:12px;
+.skill-box{
+  background: var(--softViolet);
+  color: var(--lavender);
   font-family:'Press Start 2P', cursive;
-  font-size:16px;
-  color:var(--textDark);
+  padding:12px 18px;
+  border-radius:8px;
+  min-width:120px;
+  text-align:center;
+  flex:1 1 auto;
+  transition:.3s;
 }
 
-.mastery-list ul li{
-  display:flex;
-  align-items:center;
-  flex-direction:column;
-}
-
-/* Pixel art icon for each skill with unique mini art */
-.mastery-list ul li::before{
-  content:'';
-  display:inline-block;
-  width:12px;
-  height:12px;
-  margin-bottom:6px;
-  background-color:var(--softViolet);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-/* Hover animation for pixel icons */
-.mastery-list ul li:hover::before {
-  transform: scale(1.5);
-  box-shadow: 0 0 6px var(--mutedPurple), 0 0 12px var(--softViolet);
-}
-
-/* Individual skill pixel patterns using box-shadow */
-.mastery-list ul li.github::before{
-  box-shadow:
-    2px 0 var(--mutedPurple),
-    0 2 var(--dustyLilac),
-    2 2 var(--lavender),
-    4 0 var(--textDark),
-    0 4 var(--textDark);
-}
-
-.mastery-list ul li.marketing::before{
-  box-shadow:
-    2px 0 var(--textDark),
-    0 2 var(--softViolet),
-    2 2 var(--mutedPurple),
-    4 0 var(--dustyLilac);
-}
-
-.mastery-list ul li.jira::before{
-  box-shadow:
-    2px 0 var(--dustyLilac),
-    0 2 var(--lavender),
-    2 2 var(--mutedPurple),
-    4 0 var(--softViolet);
-}
-
-.mastery-list ul li.partner::before{
-  box-shadow:
-    2px 0 var(--mutedPurple),
-    0 2 var(--lavender),
-    2 2 var(--dustyLilac),
-    4 0 var(--textDark);
-}
-
-.mastery-list ul li.shopify::before{
-  box-shadow:
-    2px 0 var(--softViolet),
-    0 2 var(--dustyLilac),
-    2 2 var(--lavender),
-    4 0 var(--textDark);
-}
-
-.mastery-list ul li.hubspot::before{
-  box-shadow:
-    2px 0 var(--textDark),
-    0 2 var(--mutedPurple),
-    2 2 var(--softViolet),
-    4 0 var(--dustyLilac);
-}
-
-/* Mastery progress bar */
-.mastery-list ul li .skill-bar {
-  width:60px;
-  height:6px;
-  margin-top:4px;
-  background:#ffffff90;
-  border:1px solid var(--mutedPurple);
-  border-radius:3px;
-  overflow:hidden;
-}
-
-.mastery-list ul li .skill-bar .skill-progress {
-  height:100%;
-  width:0%;
-  background: linear-gradient(90deg, var(--softViolet), var(--mutedPurple), var(--dustyLilac));
-  transition: width 1s ease;
+.skill-box:hover{
+  background: var(--mistPurple);
+  cursor:default;
 }
 
 /* FLOATING PIXEL STARS */
@@ -449,42 +337,20 @@ nav a:hover{
 <div class="experience-card" onclick="location.href='experience1.html'">
 <img src="digitalextremes-logo.png">
 <h3>Digital Extremes</h3>
-
 <div class="stats-box">
-
-<div class="stat">Communication
-<div class="bar"><div class="progress" style="width:100%"></div></div>
-</div>
-
-<div class="stat">Marketing
-<div class="bar"><div class="progress" style="width:100%"></div></div>
-</div>
-
-<div class="stat">Teamwork
-<div class="bar"><div class="progress" style="width:100%"></div></div>
-</div>
-
+<div class="stat">Communication</div>
+<div class="stat">Marketing</div>
+<div class="stat">Teamwork</div>
 </div>
 </div>
 
 <div class="experience-card" onclick="location.href='experience2.html'">
 <img src="hensonshaving-logo.png">
 <h3>Henson Shaving</h3>
-
 <div class="stats-box">
-
-<div class="stat">Communication
-<div class="bar"><div class="progress" style="width:95%"></div></div>
-</div>
-
-<div class="stat">Marketing
-<div class="bar"><div class="progress" style="width:95%"></div></div>
-</div>
-
-<div class="stat">Teamwork
-<div class="bar"><div class="progress" style="width:100%"></div></div>
-</div>
-
+<div class="stat">Communication</div>
+<div class="stat">Marketing</div>
+<div class="stat">Teamwork</div>
 </div>
 </div>
 
@@ -500,26 +366,12 @@ nav a:hover{
 <div class="mastery-section">
   <div class="mastery-list">
     <h2>MASTERY</h2>
-    <ul>
-      <li class="github">GitHub
-        <div class="skill-bar"><div class="skill-progress" style="width:90%"></div></div>
-      </li>
-      <li class="marketing">Digital Marketing
-        <div class="skill-bar"><div class="skill-progress" style="width:95%"></div></div>
-      </li>
-      <li class="jira">Jira
-        <div class="skill-bar"><div class="skill-progress" style="width:85%"></div></div>
-      </li>
-      <li class="partner">Partner Marketing
-        <div class="skill-bar"><div class="skill-progress" style="width:80%"></div></div>
-      </li>
-      <li class="shopify">Shopify
-        <div class="skill-bar"><div class="skill-progress" style="width:90%"></div></div>
-      </li>
-      <li class="hubspot">HubSpot
-        <div class="skill-bar"><div class="skill-progress" style="width:85%"></div></div>
-      </li>
-    </ul>
+    <div class="skill-box">GitHub</div>
+    <div class="skill-box">Digital Marketing</div>
+    <div class="skill-box">Jira</div>
+    <div class="skill-box">Partner Marketing</div>
+    <div class="skill-box">Shopify</div>
+    <div class="skill-box">HubSpot</div>
   </div>
 </div>
 
@@ -537,16 +389,6 @@ setTimeout(typeWriter,120);
 
 window.onload=()=>{
 typeWriter();
-document.querySelectorAll('.progress').forEach(bar=>{
-const width=bar.style.width;
-bar.style.width="0%";
-setTimeout(()=>{bar.style.width=width;},200);
-});
-document.querySelectorAll('.skill-progress').forEach(bar=>{
-const width=bar.style.width;
-bar.style.width="0%";
-setTimeout(()=>{bar.style.width=width;},400);
-});
 };
 </script>
 
