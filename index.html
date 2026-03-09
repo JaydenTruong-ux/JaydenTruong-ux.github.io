@@ -111,6 +111,10 @@ nav a:hover{
   margin: 20px 0;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  transition: 0.5s;
+}
+#player-box:hover {
+  box-shadow: 0 0 40px rgba(255,255,255,0.6);
 }
 
 #incoming{
@@ -144,6 +148,20 @@ nav a:hover{
   box-shadow:0 10px 20px rgba(0,0,0,0.12);
   transition:.3s;
   font-family:'Press Start 2P', cursive;
+  opacity:0;
+  transform: translateY(20px);
+  animation: fadeInCard 0.8s forwards;
+}
+
+.experience-card:nth-child(1){animation-delay:0.2s;}
+.experience-card:nth-child(2){animation-delay:0.4s;}
+.experience-card:nth-child(3){animation-delay:0.6s;}
+
+@keyframes fadeInCard{
+  to {
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
 .experience-card:hover{
@@ -238,6 +256,15 @@ nav a:hover{
   color:var(--textDark);
 }
 
+/* Divider */
+.divider {
+  width:80%;
+  height:2px;
+  background: rgba(255,255,255,0.2);
+  margin:60px 0;
+  border-radius:2px;
+}
+
 /* MASTERY SECTION */
 .mastery-section{
   display:flex;
@@ -246,45 +273,35 @@ nav a:hover{
   margin-top:60px;
   max-width:950px;
   flex-wrap:wrap;
+  position:relative;
 }
 
 .mastery-list{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:15px;
   background: linear-gradient(145deg, var(--cardLight), var(--softLilac));
   border:2px solid var(--dustyLilac);
   border-radius:16px;
   padding:30px;
-  width:100%;
+  width:300px;
   box-shadow:0 8px 20px rgba(0,0,0,0.12);
-}
-
-.mastery-list h2{
-  font-family:'Press Start 2P', cursive;
-  text-align:center;
-  font-size:22px;
-  margin-bottom:20px;
-  color:var(--textDark);
-  width:100%;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  justify-content:center;
 }
 
 .skill-box{
-  background: var(--softViolet);
-  color: var(--lavender);
+  background: var(--softLilac);
+  border:2px solid var(--dustyLilac);
+  border-radius:12px;
+  padding:10px 14px;
   font-family:'Press Start 2P', cursive;
-  padding:12px 18px;
-  border-radius:8px;
-  min-width:120px;
-  text-align:center;
-  flex:1 1 auto;
+  font-size:14px;
+  color:var(--textDark);
   transition:.3s;
 }
-
-.skill-box:hover{
-  background: var(--mistPurple);
-  cursor:default;
+.skill-box:hover {
+  transform:scale(1.05);
+  box-shadow:0 4px 12px rgba(0,0,0,0.25);
 }
 
 /* FLOATING PIXEL STARS */
@@ -371,17 +388,20 @@ nav a:hover{
 <h3>Digital Extremes</h3>
 
 <div class="stats-box">
-  <div class="stat">Communication
-    <div class="bar"><div class="progress" style="width:100%"></div></div>
-  </div>
-  <div class="stat">Marketing
-    <div class="bar"><div class="progress" style="width:100%"></div></div>
-  </div>
-  <div class="stat">Teamwork
-    <div class="bar"><div class="progress" style="width:100%"></div></div>
-  </div>
+
+<div class="stat">Communication
+<div class="bar"><div class="progress" style="width:100%"></div></div>
 </div>
 
+<div class="stat">Marketing
+<div class="bar"><div class="progress" style="width:100%"></div></div>
+</div>
+
+<div class="stat">Teamwork
+<div class="bar"><div class="progress" style="width:100%"></div></div>
+</div>
+
+</div>
 </div>
 
 <div class="experience-card" onclick="location.href='experience2.html'">
@@ -389,20 +409,26 @@ nav a:hover{
 <h3>Henson Shaving</h3>
 
 <div class="stats-box">
-  <div class="stat">Communication
-    <div class="bar"><div class="progress" style="width:95%"></div></div>
-  </div>
-  <div class="stat">Marketing
-    <div class="bar"><div class="progress" style="width:95%"></div></div>
-  </div>
-  <div class="stat">Teamwork
-    <div class="bar"><div class="progress" style="width:100%"></div></div>
-  </div>
+
+<div class="stat">Communication
+<div class="bar"><div class="progress" style="width:95%"></div></div>
+</div>
+
+<div class="stat">Marketing
+<div class="bar"><div class="progress" style="width:95%"></div></div>
+</div>
+
+<div class="stat">Teamwork
+<div class="bar"><div class="progress" style="width:100%"></div></div>
+</div>
+
+</div>
 </div>
 
 </div>
 
-</div>
+<!-- Divider -->
+<div class="divider"></div>
 
 <!-- About Me Section -->
 <div class="about-me">
@@ -410,10 +436,12 @@ nav a:hover{
 <p>Hello! I am Jayden, a Legal Studies student with a minor in Human Resource Management from the University of Waterloo. I am currently in my third year of my undergraduate degree and through my internships and coursework, I have gained hands-on experience in business development, marketing, and project coordination. Alongside a strong foundation in legal research, critical thinking, and policy analysis, my interest in law has helped me see how law connects to business and society. I look forward to applying what I learn to practical settings where I can collaborate, problem solve, and contribute to meaningful projects. Let's connect!</p>
 </div>
 
+<!-- Divider -->
+<div class="divider"></div>
+
 <!-- Mastery Section -->
 <div class="mastery-section">
   <div class="mastery-list">
-    <h2>MASTERY</h2>
     <div class="skill-box">GitHub</div>
     <div class="skill-box">Digital Marketing</div>
     <div class="skill-box">Jira</div>
@@ -438,9 +466,9 @@ setTimeout(typeWriter,120);
 window.onload=()=>{
 typeWriter();
 document.querySelectorAll('.progress').forEach(bar=>{
-  const width=bar.style.width;
-  bar.style.width="0%";
-  setTimeout(()=>{bar.style.width=width;},200);
+const width=bar.style.width;
+bar.style.width="0%";
+setTimeout(()=>{bar.style.width=width;},200);
 });
 };
 </script>
