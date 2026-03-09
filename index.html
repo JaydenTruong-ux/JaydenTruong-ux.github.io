@@ -256,23 +256,14 @@ nav a:hover{
   color:var(--textDark);
 }
 
-/* Divider */
-.divider {
-  width:80%;
-  height:2px;
-  background: rgba(255,255,255,0.2);
-  margin:60px 0;
-  border-radius:2px;
-}
-
-/* MASTERY SECTION - REVERTED */
+/* MASTERY SECTION WITH SEPARATE BOXES */
 .mastery-section{
   display:flex;
   justify-content:center;
-  gap:40px;
+  gap:20px;
+  flex-wrap:wrap;
   margin-top:60px;
   max-width:950px;
-  flex-wrap:wrap;
 }
 
 .mastery-list{
@@ -292,16 +283,19 @@ nav a:hover{
   color:var(--textDark);
 }
 
-.mastery-list ul{
-  list-style:none;
-  padding-left:0;
+.skill-box{
+  background: var(--softViolet);
+  border-radius:10px;
+  padding:15px;
+  margin:10px 0;
+  text-align:center;
+  color:white;
   font-family:'Press Start 2P', cursive;
   font-size:16px;
-  color:var(--textDark);
+  transition:0.3s;
 }
-
-.mastery-list ul li{
-  margin:10px 0;
+.skill-box:hover{
+  background: var(--mutedPurple);
 }
 
 /* FLOATING PIXEL STARS */
@@ -389,15 +383,15 @@ nav a:hover{
 
 <div class="stats-box">
 
-<div class="stat">Communication
+<div class="stat">Partner Marketing
 <div class="bar"><div class="progress" style="width:100%"></div></div>
 </div>
 
-<div class="stat">Marketing
+<div class="stat">Jira
 <div class="bar"><div class="progress" style="width:100%"></div></div>
 </div>
 
-<div class="stat">Teamwork
+<div class="stat">B2B Communication
 <div class="bar"><div class="progress" style="width:100%"></div></div>
 </div>
 
@@ -427,30 +421,22 @@ nav a:hover{
 
 </div>
 
-<!-- Divider -->
-<div class="divider"></div>
-
 <!-- About Me Section -->
 <div class="about-me">
 <h2>ABOUT ME</h2>
 <p>Hello! I am Jayden, a Legal Studies student with a minor in Human Resource Management from the University of Waterloo. I am currently in my third year of my undergraduate degree and through my internships and coursework, I have gained hands-on experience in business development, marketing, and project coordination. Alongside a strong foundation in legal research, critical thinking, and policy analysis, my interest in law has helped me see how law connects to business and society. I look forward to applying what I learn to practical settings where I can collaborate, problem solve, and contribute to meaningful projects. Let's connect!</p>
 </div>
 
-<!-- Divider -->
-<div class="divider"></div>
-
 <!-- Mastery Section -->
 <div class="mastery-section">
   <div class="mastery-list">
     <h2>MASTERY</h2>
-    <ul>
-      <li>GitHub</li>
-      <li>Digital Marketing</li>
-      <li>Jira</li>
-      <li>Partner Marketing</li>
-      <li>Shopify</li>
-      <li>HubSpot</li>
-    </ul>
+    <div class="skill-box">GitHub</div>
+    <div class="skill-box">Digital Marketing</div>
+    <div class="skill-box">Jira</div>
+    <div class="skill-box">Partner Marketing</div>
+    <div class="skill-box">Shopify</div>
+    <div class="skill-box">HubSpot</div>
   </div>
 </div>
 
